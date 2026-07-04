@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Interview Cheatsheet</title>
+    <link rel="stylesheet" href="styles.css" >
+  </head>
+
+  <body>
+    <h1>React Interview Cheatsheet</h1>
+
+    <div class="container">
+      <div class="card">
+        <h2>React Render Cycle</h2>
+
+        <div class="flow">
+          <div class="box">User action</div>
+
+          <div class="arrow">⬇</div>
+
+          <div class="box">setState() / dispatch() / Context changes</div>
+
+          <div class="arrow">⬇</div>
+
+          <div class="box">Component renders again</div>
+
+          <div class="arrow">⬇</div>
+
+          <div class="box">Virtual DOM comparison</div>
+
+          <div class="arrow">⬇</div>
+
+          <div class="box">DOM updated</div>
+
+          <div class="arrow">⬇</div>
+
+          <div class="box">Browser Paint</div>
+
+          <div class="arrow">⬇</div>
+
+          <div class="box">useEffect()</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>When does useEffect run?</h2>
+
+        <table>
+          <tr>
+            <th>Dependency</th>
+
+            <th>Runs when...</th>
+          </tr>
+
+          <tr>
+            <td><code>[]</code></td>
+
+            <td>Only once after mount</td>
+          </tr>
+
+          <tr>
+            <td><code>[count]</code></td>
+
+            <td>Whenever count changes</td>
+          </tr>
+
+          <tr>
+            <td><code>[user]</code></td>
+
+            <td>Whenever context/state reference changes</td>
+          </tr>
+
+          <tr>
+            <td>No dependency array</td>
+
+            <td>After EVERY render</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Triggers Re-render?</h2>
+
+        <table>
+          <tr>
+            <th>Action</th>
+
+            <th>Re-render?</th>
+          </tr>
+
+          <tr>
+            <td>setState()</td>
+
+            <td class="good">✔ Yes</td>
+          </tr>
+
+          <tr>
+            <td>dispatch()</td>
+
+            <td class="good">✔ Yes</td>
+          </tr>
+
+          <tr>
+            <td>Context Provider changes</td>
+
+            <td class="good">✔ Yes</td>
+          </tr>
+
+          <tr>
+            <td>Props change</td>
+
+            <td class="good">✔ Yes</td>
+          </tr>
+
+          <tr>
+            <td>useEffect()</td>
+
+            <td class="bad">✘ No*</td>
+          </tr>
+        </table>
+
+        <p>
+          * Unless the effect itself calls
+          <code>setState()</code>.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Context vs Reducer</h2>
+
+        <table>
+          <tr>
+            <th>Context</th>
+
+            <th>Reducer</th>
+          </tr>
+
+          <tr>
+            <td>Shares state</td>
+
+            <td>Updates state</td>
+          </tr>
+
+          <tr>
+            <td>Avoids prop drilling</td>
+
+            <td>Centralizes logic</td>
+          </tr>
+
+          <tr>
+            <td>Who can access?</td>
+
+            <td>How does it change?</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
