@@ -3,48 +3,445 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>React Interview Cheatsheet</title>
+    <title>Interview Cheatsheet</title>
     <link rel="stylesheet" href="styles.css" >
   </head>
 
   <body>
-    <h1>React Interview Cheatsheet</h1>
+    <h1>Interview Cheatsheet</h1>
 
-    <div class="container">
-      <div class="card">
-        <h2>React Render Cycle</h2>
-
-        <div class="flow">
-          <div class="box">User action</div>
-
-          <div class="arrow">⬇</div>
-
-          <div class="box">setState() / dispatch() / Context changes</div>
-
-          <div class="arrow">⬇</div>
-
-          <div class="box">Component renders again</div>
-
-          <div class="arrow">⬇</div>
-
-          <div class="box">Virtual DOM comparison</div>
-
-          <div class="arrow">⬇</div>
-
-          <div class="box">DOM updated</div>
-
-          <div class="arrow">⬇</div>
-
-          <div class="box">Browser Paint</div>
-
-          <div class="arrow">⬇</div>
-
-          <div class="box">useEffect()</div>
+    <details class="content-section" open>
+      <summary>📄 HTML Basics</summary>
+      <div class="container">
+        <div class="card">
+          <h2>Semantic HTML Tags</h2>
+          <table>
+            <tr>
+              <th>Tag</th>
+              <th>Purpose</th>
+            </tr>
+            <tr>
+              <td><code>&lt;header&gt;</code></td>
+              <td>Introductory content, site branding, navigation</td>
+            </tr>
+            <tr>
+              <td><code>&lt;nav&gt;</code></td>
+              <td>Major navigation links</td>
+            </tr>
+            <tr>
+              <td><code>&lt;main&gt;</code></td>
+              <td>Main unique content (one per page)</td>
+            </tr>
+            <tr>
+              <td><code>&lt;article&gt;</code></td>
+              <td>Self-contained content (blog post, comment)</td>
+            </tr>
+            <tr>
+              <td><code>&lt;section&gt;</code></td>
+              <td>Thematic grouping of related content</td>
+            </tr>
+            <tr>
+              <td><code>&lt;aside&gt;</code></td>
+              <td>Sidebar, related links, supplementary info</td>
+            </tr>
+            <tr>
+              <td><code>&lt;footer&gt;</code></td>
+              <td>Page footer, copyright, related links</td>
+            </tr>
+            <tr>
+              <td><code>&lt;figure&gt;</code></td>
+              <td>Self-contained illustration, diagram, photo</td>
+            </tr>
+            <tr>
+              <td><code>&lt;figcaption&gt;</code></td>
+              <td>Caption for &lt;figure&gt;</td>
+            </tr>
+          </table>
         </div>
+
+        <div class="card">
+          <h2>Web Accessibility (a11y)</h2>
+          <div class="accessibility-content">
+            <h3 style="color: #1565c0; margin-top: 15px;">Key Principles</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+              <li><strong>Perceivable:</strong> Content must be perceivable by users</li>
+              <li><strong>Operable:</strong> Navigation via keyboard, no keyboard traps</li>
+              <li><strong>Understandable:</strong> Content is clear and readable</li>
+              <li><strong>Robust:</strong> Works with assistive technologies</li>
+            </ul>
+            
+            <h3 style="color: #1565c0; margin: 15px 0 10px;">Accessibility Checklist</h3>
+            <ul style="margin: 10px 0; padding-left: 20px; font-size: 14px;">
+              <li><code>alt</code> text on all images</li>
+              <li>Proper heading hierarchy (h1 → h6)</li>
+              <li>Form labels with <code>&lt;label&gt;</code> tags</li>
+              <li><code>aria-label</code> for icon buttons</li>
+              <li><code>role</code> attributes for custom components</li>
+              <li>Color contrast ratio ≥ 4.5:1</li>
+              <li>Keyboard navigation support</li>
+              <li>Focus indicators visible</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>HTML Forms</h2>
+          <table>
+            <tr>
+              <th>Input Type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>text</code></td>
+              <td>Single-line text input</td>
+            </tr>
+            <tr>
+              <td><code>password</code></td>
+              <td>Password input (masked)</td>
+            </tr>
+            <tr>
+              <td><code>email</code></td>
+              <td>Email address input with validation</td>
+            </tr>
+            <tr>
+              <td><code>number</code></td>
+              <td>Numeric input with optional min/max</td>
+            </tr>
+            <tr>
+              <td><code>checkbox</code></td>
+              <td>Multiple selection options</td>
+            </tr>
+            <tr>
+              <td><code>radio</code></td>
+              <td>Single selection from a group</td>
+            </tr>
+            <tr>
+              <td><code>submit</code></td>
+              <td>Submit the form data</td>
+            </tr>
+          </table>
+
+          <p style="margin-top: 15px;">Remember to use the correct form attributes like:</p>
+
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>action:</strong> URL to send form data to</li>
+            <li><strong>method:</strong> GET or POST for data submission</li>
+          </ul>
+      </div>
+      <div class="card">
+        <h2>HTML5 New Features</h2>
+        <ul style="margin: 10px 0; padding-left: 20px;">
+          <li><strong>New Semantic Elements:</strong> &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;, &lt;nav&gt;</li>
+          <li><strong>Audio and Video:</strong> &lt;audio&gt;, &lt;video&gt; tags for media playback</li>
+          <li><strong>Canvas:</strong> &lt;canvas&gt; for drawing graphics via JavaScript</li>
+          <li><strong>Local Storage:</strong> Web Storage API for storing data in the browser</li>
+          <li><strong>Geolocation API:</strong> Access user's location with permission</li>
+          <li><strong>Form Enhancements:</strong> New input types, validation, and attributes</li>
+        </ul>
+        </div>
+
+
+
+
+    </details>
+
+    <div class="flashcards-section">
+      <h3>Flashcards — HTML</h3>
+      <div class="flashcards-grid">
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the purpose of a semantic tag?</summary>
+          <div class="flashcard-answer">It gives meaning to content and improves accessibility and SEO.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">Why is alt text important?</summary>
+          <div class="flashcard-answer">It helps screen readers describe images and improves accessibility.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What does ARIA help with?</summary>
+          <div class="flashcard-answer">It helps make custom UI components more accessible to assistive technologies.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">Why use <code>&lt;section&gt;</code> instead of <code>&lt;div&gt;</code>?</summary>
+          <div class="flashcard-answer">A <code>&lt;div&gt;</code> is a generic container with no semantic meaning, while <code>&lt;section&gt;</code> groups related content that usually has a heading and gives structure to the page.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code>?</summary>
+          <div class="flashcard-answer">An <code>&lt;article&gt;</code> is a self-contained piece of content that should still make sense on its own, while a <code>&lt;section&gt;</code> groups related content under a common theme.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is <code>&lt;span&gt;</code> used for?</summary>
+          <div class="flashcard-answer">A <code>&lt;span&gt;</code> is an inline element mainly used to style or target part of a sentence or word without breaking the flow of text.</div>
+        </details>
+      </div>
+    </div>
+
+    <details class="content-section" open>
+      <summary>🟨 JavaScript (ES6+)</summary>
+      <div class="container">
+        <div class="card">
+          <h2>Async/Await vs Promises</h2>
+          <table>
+            <tr><th>Promises</th><th>Async/Await</th></tr>
+            <tr><td>Chainable with .then/.catch</td><td>Syntactic sugar over Promises, reads like sync code</td></tr>
+            <tr><td>Good for parallel flows (Promise.all)</td><td>Good for sequential flows and readability</td></tr>
+            <tr><td>Must handle rejections with .catch</td><td>Use try/catch for errors</td></tr>
+            <tr><td>Works in older environments with polyfills</td><td>Requires async-capable runtime or transpile</td></tr>
+          </table>
+          <pre><code>// create 23 promises and await them
+const tasks = Array.from({length:23}, (_,i) =>
+  new Promise((res) => setTimeout(() => res(i+1), 10 + (i%5)*10))
+);
+
+// parallel with Promise.all
+Promise.all(tasks).then(results => console.log('parallel results', results));
+
+// sequential with async/await
+async function runSequential(){
+  const out = [];
+  for(const t of tasks){
+    out.push(await t);
+  }
+  console.log('sequential results', out);
+}
+runSequential();</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Arrow Functions</h2>
+          <p>Shorter syntax; lexical `this` binding.</p>
+          <pre><code>const nums = [1,2,3];
+const squares = nums.map(n => n*n);
+const obj = {
+  val: 10,
+  getVal: () => this.val // `this` is lexical, not the object
+};</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>let / const & Block Scope</h2>
+          <p>`let` and `const` are block-scoped; `const` is immutable binding.</p>
+          <pre><code>for(let i=0;i&lt;3;i++){
+  setTimeout(()=>console.log(i), 10); // prints 0,1,2
+}
+const a = {x:1};
+a.x = 2; // allowed; binding immutable, properties mutable</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Destructuring & Defaults</h2>
+          <pre><code>const [a,b=2] = [1];
+const {name='anon'} = {};
+function f({x=0,y=0} = {}){ return x+y }</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Spread & Rest</h2>
+          <pre><code>const a = [1,2];
+const b = [...a,3];
+function sum(...nums){ return nums.reduce((s,n)=>s+n,0) }</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Modules (import / export)</h2>
+          <pre><code>// module.js
+export function add(a,b){ return a+b }
+
+// main.js
+import { add } from './module.js';
+console.log(add(1,2));</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Browser Storage</h2>
+          <p>Use <code>localStorage</code> for data that should persist across browser sessions, and <code>sessionStorage</code> for temporary data that should disappear when the tab closes.</p>
+          <pre><code>localStorage.setItem('theme', 'dark');
+const theme = localStorage.getItem('theme');
+
+sessionStorage.setItem('step', '2');</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Classes & Prototypes</h2>
+          <pre><code>class Animal{ constructor(name){ this.name = name } speak(){ return this.name } }
+class Dog extends Animal{ bark(){ return 'woof' }}
+const d = new Dog('Fido');</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Map / Set</h2>
+          <pre><code>const s = new Set([1,2,2]);
+const m = new Map([['k', 'v']]);
+console.log(s.has(1), m.get('k'));</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Generators & Iterators</h2>
+          <pre><code>function* gen(){ yield 1; yield 2 }
+const it = gen();
+console.log(it.next().value);</code></pre>
+        </div>
+      </div>
+    </details>
+
+    <div class="flashcards-section">
+      <h3>Flashcards — JavaScript</h3>
+      <div class="flashcards-grid">
+        <details class="flashcard"><summary class="flashcard-question">Promise vs async/await: main difference?</summary><div class="flashcard-answer">async/await is syntactic sugar over Promises, making async code look synchronous; Promises provide methods like .then/.catch.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">How do you handle multiple promises in parallel?</summary><div class="flashcard-answer">Use Promise.all (or Promise.allSettled) to run promises in parallel and await their combined result.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">What is a closure?</summary><div class="flashcard-answer">A function that retains access to the lexical scope in which it was created, even after that scope has exited.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">Explain event loop microtasks vs macrotasks.</summary><div class="flashcard-answer">Microtasks (Promises) run after the current task but before the next rendering; macrotasks (setTimeout) run later in the queue.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">Difference between == and ===?</summary><div class="flashcard-answer">== performs type coercion before comparison; === checks strict equality without coercion.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">What's lexical `this` in arrow functions?</summary><div class="flashcard-answer">Arrow functions do not have their own `this`; they inherit `this` from the surrounding lexical scope.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">When to use Map vs Object?</summary><div class="flashcard-answer">Map preserves insertion order, accepts any key types, and has size property—better for keyed collections than plain objects.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">What are generators good for?</summary><div class="flashcard-answer">Generators allow pausing/resuming function execution and are useful for lazy sequences and implementing iterators.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">How do modules differ from CommonJS require?</summary><div class="flashcard-answer">ES modules are statically analyzable and use `import`/`export`; CommonJS loads modules at runtime with `require`.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">What is the difference between let, const, and var?</summary><div class="flashcard-answer">`var` is function-scoped and hoisted; `let` and `const` are block-scoped, with `const` being immutable binding.</div></details>
+        <details class="flashcard"><summary class="flashcard-question">What is the difference between null and undefined?</summary><div class="flashcard-answer">`undefined` means a variable has been declared but not assigned; `null` is an assignment value representing no value.</div></details>
+    <details class="flashcard"><summary class="flashcard-question">What is the difference between synchronous and asynchronous code?</summary><div class="flashcard-answer">Synchronous code runs sequentially, blocking further execution until complete; asynchronous code allows other operations to run while waiting for tasks to finish.</div></details>
+      </div> 
+    </div>
+
+    <details class="content-section" open>
+      <summary>💻 CSS Basics</summary>
+      <div class="container">
+        <div class="card">
+          <h2>CSS Box Model</h2>
+          <p>The CSS box model describes the rectangular boxes generated for elements in the document tree and consists of:</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>Content:</strong> The actual content of the box, where text and images appear.</li>
+            <li><strong>Padding:</strong> Clears an area around the content. The padding is transparent.</li>
+            <li><strong>Border:</strong> A border that goes around the padding (if any) and content.</li>
+            <li><strong>Margin:</strong> Clears an area outside the border. The margin is also transparent.</li>
+          </ul>
+          <pre><code>&lt;div class="box-container"&gt;
+  &lt;div class="box"&gt;1&lt;/div&gt;
+  &lt;div class="box"&gt;2&lt;/div&gt;
+  &lt;!-- repeat for 23 boxes --&gt;
+&lt;/div&gt;
+
+.box-container { padding: 12px; border: 2px solid #1976d2; }
+.box { width: 32px; height: 32px; margin: 4px; padding: 6px; border: 2px solid #1565c0; }</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>CSS Flexbox</h2>
+          <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. Key properties include:</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>display: flex;</strong> - Defines a flex container.</li>
+            <li><strong>flex-direction:</strong> - Row or column layout.</li>
+            <li><strong>justify-content:</strong> - Aligns items horizontally.</li>
+            <li><strong>align-items:</strong> - Aligns items vertically.</li>
+            <li><strong>flex-wrap:</strong> - Allows items to wrap onto multiple lines.</li>
+          </ul>
+          <pre><code>&lt;div class="flex-demo"&gt;
+  &lt;div class="box"&gt;1&lt;/div&gt;
+  &lt;div class="box"&gt;2&lt;/div&gt;
+  &lt;!-- repeat for 23 boxes --&gt;
+&lt;/div&gt;
+
+.flex-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>CSS Grid</h2>
+          <p>CSS Grid is a two-dimensional layout system for creating complex layouts. Key properties include:</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>display: grid;</strong> - Defines a grid container.</li>
+            <li><strong>grid-template-columns / grid-template-rows:</strong> - Defines the columns and rows of the grid.</li>
+            <li><strong>grid-gap:</strong> - Sets the gap between rows and columns.</li>
+            <li><strong>grid-column / grid-row:</strong> - Specifies how many columns or rows an item should span.</li>
+            <li><strong>justify-items / align-items:</strong> - Aligns items within their grid area.</li>
+          </ul>
+          <pre><code>&lt;div class="grid-demo"&gt;
+  &lt;div class="box"&gt;1&lt;/div&gt;
+  &lt;div class="box"&gt;2&lt;/div&gt;
+  &lt;!-- repeat for 23 boxes --&gt;
+&lt;/div&gt;
+
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}</code></pre>
+        </div>
+      </div>
+    </details>
+
+    <div class="flashcards-section">
+      <h3>Flashcards — CSS</h3>
+      <div class="flashcards-grid">
+        <details class="flashcard">
+          <summary class="flashcard-question">What are the four parts of the box model?</summary>
+          <div class="flashcard-answer">Content, padding, border, and margin.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is Flexbox best for?</summary>
+          <div class="flashcard-answer">Laying out items in one dimension, either rows or columns.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is CSS Grid best for?</summary>
+          <div class="flashcard-answer">Creating two-dimensional layouts with rows and columns.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What does justify-content do in Flexbox?</summary>
+          <div class="flashcard-answer">It aligns items along the main axis (horizontally in a row, vertically in a column).</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What does align-items do in Flexbox?</summary>
+          <div class="flashcard-answer">It aligns items along the cross axis (vertically in a row, horizontally in a column).</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between inline, block, and inline-block elements?</summary>
+          <div class="flashcard-answer">Inline elements do not start on a new line and only take up as much width as necessary. Block elements start on a new line and take up the full width available. Inline-block elements are like inline elements but can have width and height set.</div>
+        </details>  
+      </div>
+    </div>
+    <details class="content-section" open>
+      <summary>⚛️ React</summary>
+      <div class="container">
+        <div class="card">
+          <h2>React Render Cycle</h2>
+
+          <div class="flow">
+            <div class="box">User action</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="box">setState() / dispatch() / Context changes</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="box">Component renders again</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="box">Virtual DOM comparison</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="box">DOM updated</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="box">Browser Paint</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="box">useEffect()</div>
+          </div>
+        </div>
+
+        <div class="card">
+        <h2>React vs Vanilla JavaScript</h2>
+        <p>Vanilla JavaScript manipulates the DOM directly with methods like <code>querySelector</code> and <code>addEventListener</code>. React lets you describe the UI declaratively with components and state, and it updates the DOM efficiently when state changes.</p>
       </div>
 
       <div class="card">
-        <h2>When does useEffect run?</h2>
+        <h2>When should you use useEffect?</h2>
 
         <table>
           <tr>
@@ -124,6 +521,7 @@
           * Unless the effect itself calls
           <code>setState()</code>.
         </p>
+        <p>Use <code>useEffect</code> for side effects such as fetching data, subscribing to events, timers, or syncing with browser APIs like <code>localStorage</code>. It is usually not the right tool for computing values from existing state during render.</p>
       </div>
 
       <div class="card">
@@ -155,6 +553,296 @@
           </tr>
         </table>
       </div>
+
+      <div class="card">
+        <h2>Props: Parent to Child</h2>
+        <p>A parent component can own state and pass both values and callback functions to children through props. This is a common pattern for controlling behavior from a parent.</p>
+        <pre><code>function Parent() {
+  const [count, setCount] = useState(0);
+
+  const handleReset = () => setCount(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <Child count={count} onReset={handleReset} />
     </div>
+  );
+}
+
+function Child({ count, onReset }) {
+  return <button onClick={onReset}>Reset ({count})</button>;
+}</code></pre>
+      </div>
+
+      <div class="card">
+        <h2>Class vs Functional Components</h2>
+
+        <table>
+          <tr>
+            <th>Class Component</th>
+
+            <th>Functional Component</th>
+          </tr>
+
+          <tr>
+            <td>Uses lifecycle methods</td>
+
+            <td>Uses hooks</td>
+          </tr>
+
+          <tr>
+            <td>Has this.state and this.setState()</td>
+
+            <td>Uses useState() hook</td>
+          </tr>
+
+          <tr>
+            <td>More boilerplate code</td>
+
+            <td>Simpler and more concise</td>
+          </tr>
+        </table>  
+      </div>
+      <div class="card">
+        <h2>useContext</h2>
+        <p><code>useContext</code> lets a component read values from a context without passing props through every level. It is helpful for shared data such as themes, authentication, or user settings.</p>
+        <pre><code>const ThemeContext = createContext();
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function Header() {
+  const { theme } = useContext(ThemeContext);
+  return <h2>Current theme: {theme}</h2>;
+}</code></pre>
+      </div>
+    </div>
+
+    </details>
+
+    <div class="flashcards-section">
+      <h3>Flashcards — React</h3>
+      <div class="flashcards-grid">
+        <details class="flashcard">
+          <summary class="flashcard-question">What triggers a React re-render?</summary>
+          <div class="flashcard-answer">State changes, prop changes, and context updates typically trigger re-renders.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">How is React different from vanilla JavaScript?</summary>
+          <div class="flashcard-answer">Vanilla JavaScript manipulates the DOM directly, while React uses declarative components and state to update the DOM efficiently.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">When should you use useEffect?</summary>
+          <div class="flashcard-answer">Use it for side effects such as fetching data, subscriptions, timers, and browser API synchronization.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">When would you choose props over useContext?</summary>
+          <div class="flashcard-answer">Use props for simple, direct data flow between a parent and a child. Use useContext for shared values that many components need without threading props through every level.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">When does useEffect run?</summary>
+          <div class="flashcard-answer">After the component renders, and again when its dependencies change.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between context and reducer?</summary>
+          <div class="flashcard-answer">Context shares state, while a reducer centralizes how state changes.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the main difference between class and functional components?</summary>
+          <div class="flashcard-answer">Class components use lifecycle methods and this.state; functional components use hooks and are usually simpler.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">When would you choose a functional component over a class component?</summary>
+          <div class="flashcard-answer">Functional components are preferred for modern React when you want simpler logic and hooks-based state/effects.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the purpose of a key prop in a list?</summary>
+          <div class="flashcard-answer">It helps React identify which list items changed, were added, or removed, improving reconciliation.</div>
+        </details>
+        <deletails class="flashcard">
+          <summary class="flashcard-question">What is the difference between controlled and uncontrolled components?</summary>
+          <div class="flashcard-answer">Controlled components have their state managed by React, while uncontrolled components manage their own state internally.</div>
+        </deletails>
+      <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between useState and useReducer?</summary>
+          <div class="flashcard-answer">useState is for simple state management, while useReducer is better for complex state logic and multiple state transitions.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between useEffect and useLayoutEffect?</summary>
+          <div class="flashcard-answer">useEffect runs after the render is committed to the screen, while useLayoutEffect runs synchronously after all DOM mutations but before the browser paints.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between React.memo and useMemo?</summary>
+          <div class="flashcard-answer">React.memo is a higher-order component that memoizes a component to prevent unnecessary re-renders, while useMemo is a hook that memoizes a value or computation within a component.</div>
+        </details>
+      </div>
+    </div>
+
+    <details class="content-section" open>
+      <summary>🅰️ Angular</summary>
+      <div class="container">
+        <div class="card">
+          <h2>Angular Architecture</h2>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>Components:</strong> UI building blocks with templates and logic.</li>
+            <li><strong>Modules:</strong> Group related features and declarations.</li>
+            <li><strong>Services:</strong> Shared logic, data access, and cross-component state.</li>
+            <li><strong>Dependency Injection:</strong> Angular injects dependencies where needed.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Data Binding</h2>
+          <p>Angular supports several binding types:</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>Interpolation:</strong> <code>{{ value }}</code></li>
+            <li><strong>Property binding:</strong> <code>[src]=&quot;imageUrl&quot;</code></li>
+            <li><strong>Event binding:</strong> <code>(click)=&quot;save()&quot;</code></li>
+            <li><strong>Two-way binding:</strong> <code>[(ngModel)]</code></li>
+          </ul>
+          <pre><code>@Component({
+  template: `&lt;h2&gt;{{ title }}&lt;/h2&gt;`
+})
+export class DemoComponent {
+  title = 'Angular';
+}</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Services & Dependency Injection</h2>
+          <p>Services centralize reusable logic and are injected into components via Angular's DI container.</p>
+          <pre><code>@Injectable({ providedIn: 'root' })
+export class UserService {
+  getUsers() { return ['Ada', 'Grace']; }
+}</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>RxJS & Observables</h2>
+          <p>RxJS lets Angular handle asynchronous streams with observables, operators, and subscriptions.</p>
+          <pre><code>this.http.get&lt;User[]&gt;('/api/users').subscribe(users => {
+  this.users = users;
+});</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Change Detection</h2>
+          <p>Angular updates the UI based on change detection. Using <code>ChangeDetectionStrategy.OnPush</code> can improve performance by limiting checks.</p>
+          <pre><code>@Component({
+  selector: 'app-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<h3>{{ name }}</h3>'
+})
+export class CardComponent { @Input() name = ''; }</code></pre>
+        </div>
+      </div>
+    </details>
+
+    <div class="flashcards-section">
+      <h3>Flashcards — Angular</h3>
+      <div class="flashcards-grid">
+        <details class="flashcard">
+          <summary class="flashcard-question">What are Angular components responsible for?</summary>
+          <div class="flashcard-answer">They define the UI, behavior, and template for a specific part of the application.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is dependency injection in Angular?</summary>
+          <div class="flashcard-answer">It is a design pattern where Angular provides dependencies to classes instead of having them create them manually.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is the difference between interpolation and property binding?</summary>
+          <div class="flashcard-answer">Interpolation renders values into text, while property binding updates DOM properties such as src or disabled.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What are services used for?</summary>
+          <div class="flashcard-answer">Services are used to share logic, data access, and business rules across multiple components.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What is RxJS commonly used for in Angular?</summary>
+          <div class="flashcard-answer">It handles asynchronous data streams, HTTP requests, events, and reactive programming.</div>
+        </details>
+        <details class="flashcard">
+          <summary class="flashcard-question">What does OnPush change detection do?</summary>
+          <div class="flashcard-answer">It reduces unnecessary checks by only updating the component when its inputs or events change.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="card">
+<details class="content-section" open>
+      <summary>node.js</summary>
+      <div class="container">
+
+<div class="flow">
+    <div class="box">Event Loop</div>
+    <div class="arrow">⬇</div>
+    <div class="box">Call Stack</div>
+    <div class="arrow">⬇</div>
+    <div class="box">Node APIs (fs, http, etc.)</div>
+    <div class="arrow">⬇</div>
+    <div class="box">Callback Queue</div>
+    <div class="arrow">⬇</div>
+    <div class="box">Microtask Queue (Promises)</div>       
+
+</div>
+ <div class="card">
+        <h2>Node.js Event Loop</h2>
+        <p>The Node.js event loop is a mechanism that allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible.</p>
+        <ul style="margin: 10px 0; padding-left: 20px;">
+          <li><strong>Phases:</strong> Timers, I/O callbacks, idle/prepare, poll, check, close callbacks.</li>
+          <li><strong>Microtasks:</strong> Promises and process.nextTick are executed after the current operation completes but before the event loop continues.</li>
+          <li><strong>Non-blocking:</strong> Node.js uses an event-driven architecture to handle multiple connections concurrently without blocking the main thread.</li>
+        </ul>
+             
+</div>
+<div class="card">
+        <h2>Node.js Modules</h2>
+        <p>Node.js uses the CommonJS module system, where each file is treated as a separate module.</p>
+        <ul style="margin: 10px 0; padding-left: 20px;">
+          <li><strong>require:</strong> Used to import modules.</li>
+          <li><strong>module.exports:</strong> Used to export functions, objects, or values from a module.</li>
+          <li><strong>ES Modules:</strong> Node.js also supports ES6 modules using <code>import</code> and <code>export</code>, but it requires the use of the .mjs extension or setting "type": "module" in package.json.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Node.js Streams</h2>
+        <p>Streams are a way to handle reading/writing data in chunks, which is efficient for large data sets.</p>
+        <ul style="margin: 10px 0; padding-left: 20px;">
+          <li><strong>Readable Streams:</strong> Used for reading data (e.g., fs.createReadStream).</li>
+          <li><strong>Writable Streams:</strong> Used for writing data (e.g., fs.createWriteStream).</li>
+          <li><strong>Duplex Streams:</strong> Can be both readable and writable (e.g., net.Socket).</li>
+          <li><strong>Transform Streams:</strong> A type of duplex stream that can modify or transform the data as it is read or written.</li>
+        </ul>
+      </div>    
+
+</details>
+    <div class="flashcards-section">
+      <h3>Flashcards — Miscellaneous</h3>
+      <div class="flashcards-grid">
+        <details class="flashcard"><summary class="flashcard-question">What is the difference between synchronous and asynchronous code?</summary><div class="flashcard-answer">Synchronous code runs sequentially, blocking further execution until complete; asynchronous code allows other operations to run while waiting for tasks to finish.</div></details>
+      </div>
+    <div class="footer">
+      <p>Created by Isabelle</p>
+    </div>  
+
+    <script>
+      // If users click the details surface (not summary), forward the click to summary
+      document.querySelectorAll('details.flashcard').forEach((d) => {
+        d.addEventListener('click', (e) => {
+          if (e.target === d) {
+            const s = d.querySelector('summary');
+            if (s) s.click();
+          }
+        });
+      });
+    </script>
   </body>
 </html>

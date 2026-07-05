@@ -11,18 +11,21 @@ h1{
 
 .container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:25px;
+    align-items:start;
+    width:100%;
 }
 
 .card{
-
-    background:white;
+    background:#ffffff;
     padding:20px;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    border-radius:14px;
+    border:1px solid #e5eaf0;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
 .card h2{
@@ -74,10 +77,21 @@ th,td{
 }
 
 code{
-
-    background:#efefef;
-    padding:2px 5px;
+    background:#eef2ff;
+    color:#213c66;
+    padding:2px 6px;
     border-radius:4px;
+}
+
+.card pre{
+    background:#0f172a;
+    color:#f8fafc;
+    padding:14px;
+    border-radius:10px;
+    overflow-x:auto;
+    margin:0;
+    font-size:14px;
+    line-height:1.5;
 }
 
 .good{
@@ -90,4 +104,116 @@ code{
 
     color:red;
     font-weight:bold;
+}
+
+.accessibility-content ul{
+    list-style-position: inside;
+}
+
+.accessibility-content li{
+    margin: 6px 0;
+}
+
+.content-section{
+    margin-bottom: 30px;
+}
+
+.content-section summary{
+    font-size: 20px;
+    font-weight: bold;
+    color: #1565c0;
+    padding: 15px 20px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease;
+    border-left: 4px solid #1565c0;
+}
+
+.content-section summary:hover{
+    background: #e3f2fd;
+}
+
+.content-section summary::marker{
+    color: #1565c0;
+}
+
+.flashcards-section{
+    margin: 0 0 30px;
+}
+
+.flashcards-section h3{
+    color: #1565c0;
+    margin-bottom: 12px;
+}
+
+.flashcards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+}
+
+/* support both button.flashcard and details.flashcard */
+.flashcard{
+    border:none;
+    background:white;
+    border-radius:14px;
+    padding:16px;
+    text-align:left;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    min-height:120px;
+}
+
+details.flashcard{
+    /* details uses default display; override to match button layout */
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+details.flashcard summary{
+    list-style:none;
+    cursor:pointer;
+    outline:none;
+    /* make the summary fill the whole card so clicks anywhere toggle */
+    display:block;
+    padding:16px;
+    margin:0; /* remove default margins */
+    width:100%;
+}
+
+/* ensure the details element doesn't double-pad (we move padding to summary) */
+details.flashcard{
+    padding:0;
+}
+
+.flashcard-question{
+    font-weight:bold;
+    color:#0f172a;
+}
+
+.flashcard-answer{
+    color:#4b5563;
+    display:none;
+    margin-top:4px;
+    line-height:1.4;
+}
+
+/* when using details, rely on the [open] attribute */
+details.flashcard[open] .flashcard-answer{
+    display:block;
+}
+
+/* also support JS-toggled class for backward compatibility */
+.flashcard.is-open .flashcard-answer{
+    display:block;
+}
+
+.flashcard.is-open{
+    border:1px solid #1565c0;
 }
