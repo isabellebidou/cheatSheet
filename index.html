@@ -298,6 +298,9 @@ console.log(it.next().value);</code></pre>
         <details class="flashcard"><summary class="flashcard-question">What is the difference between let, const, and var?</summary><div class="flashcard-answer">`var` is function-scoped and hoisted; `let` and `const` are block-scoped, with `const` being immutable binding.</div></details>
         <details class="flashcard"><summary class="flashcard-question">What is the difference between null and undefined?</summary><div class="flashcard-answer">`undefined` means a variable has been declared but not assigned; `null` is an assignment value representing no value.</div></details>
     <details class="flashcard"><summary class="flashcard-question">What is the difference between synchronous and asynchronous code?</summary><div class="flashcard-answer">Synchronous code runs sequentially, blocking further execution until complete; asynchronous code allows other operations to run while waiting for tasks to finish.</div></details>
+
+        <details class="flashcard"><summary class="flashcard-question">What is the difference between synchronous and asynchronous code?</summary><div class="flashcard-answer">Synchronous code runs sequentially, blocking further execution until complete; asynchronous code allows other operations to run while waiting for tasks to finish.</div></details>
+
       </div> 
     </div>
 
@@ -776,59 +779,54 @@ export class CardComponent { @Input() name = ''; }</code></pre>
       </div>
     </div>
 
-    <div class="card">
-<details class="content-section" open>
+    <details class="content-section" open>
       <summary>node.js</summary>
       <div class="container">
+        <div class="flow">
+          <div class="box">Event Loop</div>
+          <div class="arrow">⬇</div>
+          <div class="box">Call Stack</div>
+          <div class="arrow">⬇</div>
+          <div class="box">Node APIs (fs, http, etc.)</div>
+          <div class="arrow">⬇</div>
+          <div class="box">Callback Queue</div>
+          <div class="arrow">⬇</div>
+          <div class="box">Microtask Queue (Promises)</div>
+        </div>
 
-<div class="flow">
-    <div class="box">Event Loop</div>
-    <div class="arrow">⬇</div>
-    <div class="box">Call Stack</div>
-    <div class="arrow">⬇</div>
-    <div class="box">Node APIs (fs, http, etc.)</div>
-    <div class="arrow">⬇</div>
-    <div class="box">Callback Queue</div>
-    <div class="arrow">⬇</div>
-    <div class="box">Microtask Queue (Promises)</div>       
+        <div class="card">
+          <h2>Node.js Event Loop</h2>
+          <p>The Node.js event loop is a mechanism that allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible.</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>Phases:</strong> Timers, I/O callbacks, idle/prepare, poll, check, close callbacks.</li>
+            <li><strong>Microtasks:</strong> Promises and process.nextTick are executed after the current operation completes but before the event loop continues.</li>
+            <li><strong>Non-blocking:</strong> Node.js uses an event-driven architecture to handle multiple connections concurrently without blocking the main thread.</li>
+          </ul>
+        </div>
 
-</div>
- <div class="card">
-        <h2>Node.js Event Loop</h2>
-        <p>The Node.js event loop is a mechanism that allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible.</p>
-        <ul style="margin: 10px 0; padding-left: 20px;">
-          <li><strong>Phases:</strong> Timers, I/O callbacks, idle/prepare, poll, check, close callbacks.</li>
-          <li><strong>Microtasks:</strong> Promises and process.nextTick are executed after the current operation completes but before the event loop continues.</li>
-          <li><strong>Non-blocking:</strong> Node.js uses an event-driven architecture to handle multiple connections concurrently without blocking the main thread.</li>
-        </ul>
-             
-</div>
-<div class="card">
-        <h2>Node.js Modules</h2>
-        <p>Node.js uses the CommonJS module system, where each file is treated as a separate module.</p>
-        <ul style="margin: 10px 0; padding-left: 20px;">
-          <li><strong>require:</strong> Used to import modules.</li>
-          <li><strong>module.exports:</strong> Used to export functions, objects, or values from a module.</li>
-          <li><strong>ES Modules:</strong> Node.js also supports ES6 modules using <code>import</code> and <code>export</code>, but it requires the use of the .mjs extension or setting "type": "module" in package.json.</li>
-        </ul>
+        <div class="card">
+          <h2>Node.js Modules</h2>
+          <p>Node.js uses the CommonJS module system, where each file is treated as a separate module.</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>require:</strong> Used to import modules.</li>
+            <li><strong>module.exports:</strong> Used to export functions, objects, or values from a module.</li>
+            <li><strong>ES Modules:</strong> Node.js also supports ES6 modules using <code>import</code> and <code>export</code>, but it requires the use of the .mjs extension or setting "type": "module" in package.json.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Node.js Streams</h2>
+          <p>Streams are a way to handle reading/writing data in chunks, which is efficient for large data sets.</p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li><strong>Readable Streams:</strong> Used for reading data (e.g., fs.createReadStream).</li>
+            <li><strong>Writable Streams:</strong> Used for writing data (e.g., fs.createWriteStream).</li>
+            <li><strong>Duplex Streams:</strong> Can be both readable and writable (e.g., net.Socket).</li>
+            <li><strong>Transform Streams:</strong> A type of duplex stream that can modify or transform the data as it is read or written.</li>
+          </ul>
+        </div>
       </div>
-      <div class="card">
-        <h2>Node.js Streams</h2>
-        <p>Streams are a way to handle reading/writing data in chunks, which is efficient for large data sets.</p>
-        <ul style="margin: 10px 0; padding-left: 20px;">
-          <li><strong>Readable Streams:</strong> Used for reading data (e.g., fs.createReadStream).</li>
-          <li><strong>Writable Streams:</strong> Used for writing data (e.g., fs.createWriteStream).</li>
-          <li><strong>Duplex Streams:</strong> Can be both readable and writable (e.g., net.Socket).</li>
-          <li><strong>Transform Streams:</strong> A type of duplex stream that can modify or transform the data as it is read or written.</li>
-        </ul>
-      </div>    
+    </details>
 
-</details>
-    <div class="flashcards-section">
-      <h3>Flashcards — Miscellaneous</h3>
-      <div class="flashcards-grid">
-        <details class="flashcard"><summary class="flashcard-question">What is the difference between synchronous and asynchronous code?</summary><div class="flashcard-answer">Synchronous code runs sequentially, blocking further execution until complete; asynchronous code allows other operations to run while waiting for tasks to finish.</div></details>
-      </div>
     <div class="footer">
       <p>Created by Isabelle</p>
     </div>  

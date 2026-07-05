@@ -47,7 +47,7 @@ h1{
 
     background:#1976d2;
     color:white;
-    padding:12px;
+    padding:6px;
     width:90%;
     border-radius:8px;
     text-align:center;
@@ -88,10 +88,22 @@ code{
     color:#f8fafc;
     padding:14px;
     border-radius:10px;
-    overflow-x:auto;
+    overflow:auto;
     margin:0;
     font-size:14px;
     line-height:1.5;
+    display:block;
+    width:90%;
+    max-width:100%;
+    box-sizing:border-box;
+    flex-shrink:0;
+    white-space:pre;
+}
+
+.card pre code{
+    display:block;
+    white-space:pre;
+    overflow-x:auto;
 }
 
 .good{
@@ -182,9 +194,9 @@ details.flashcard summary{
     outline:none;
     /* make the summary fill the whole card so clicks anywhere toggle */
     display:block;
-    padding:16px;
-    margin:0; /* remove default margins */
-    width:100%;
+    padding:10px;
+    margin: 2px; 
+    width:90%;
 }
 
 /* ensure the details element doesn't double-pad (we move padding to summary) */
@@ -198,10 +210,11 @@ details.flashcard{
 }
 
 .flashcard-answer{
-    color:#4b5563;
+    color:#5475a3;
     display:none;
-    margin-top:4px;
+    margin: 2px;
     line-height:1.4;
+    padding: 0px;
 }
 
 /* when using details, rely on the [open] attribute */
