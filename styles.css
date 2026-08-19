@@ -271,3 +271,16 @@ code{
     padding:2px 5px;
     border-radius:4px;
 }
+
+/* Agentic AI section styles */
+#agentic-ai .card h2{
+    color:#b71c1c;
+}
+#agentic-ai .card p,
+#agentic-ai .card li{
+    color:#263238;
+}
+#agentic-ai .card ul{
+    margin:8px 0;
+    padding-left:20px;
+}

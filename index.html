@@ -1709,6 +1709,109 @@ export class CardComponent { @Input() name = ''; }</code></pre>
     </div>
   </details>
 
+  <details class="content-section" open id="agentic-ai">
+    <summary>🤖 Agentic AI</summary>
+    <div class="container">
+      <div class="card">
+        <h2>What is Agentic AI?</h2>
+        <p>Agentic AI refers to systems that can plan, act autonomously, and manage multi-step tasks using
+          reasoning, tools, and memory.</p>
+        <ul>
+          <li><strong>Autonomy:</strong> Sets and pursues goals with minimal human input.</li>
+          <li><strong>Planning:</strong> Breaks complex tasks into steps and sequences actions.</li>
+          <li><strong>Tool Use:</strong> Leverages external tools (APIs, code execution, browsers).</li>
+          <li><strong>Safety:</strong> Includes guardrails: human oversight, constraints, and verification.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Design Patterns</h2>
+        <ul>
+          <li><strong>Planner + Executor:</strong> Separate high-level planning from action execution.</li>
+          <li><strong>Loop with Verification:</strong> Plan → Act → Observe → Verify → Replan.</li>
+          <li><strong>Tool Abstraction:</strong> Wrap external tools with stable interfaces and validation.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Quick Tips</h2>
+        <ul>
+          <li>Limit action scope and require confirmations for irreversible steps.</li>
+          <li>Log actions and decisions for auditability.</li>
+          <li>Use sandboxed environments for risky operations.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <div class="flashcards-section">
+    <h3>Flashcards — Agentic AI</h3>
+    <div class="flashcards-grid">
+      <!-- Add <details class="flashcard"> elements here to create cards -->
+    </div>
+  </div>
+  <div class="flashcards-section">
+    <h3>Security</h3>
+    <div class="flashcards-grid">
+      <!-- Add <details class="flashcard"> elements here to create cards -->
+        <details class="flashcard"> <summary class="flashcard-question">What is SQL injection?</summary>
+        <div class="flashcard-answer">SQL injection is a code injection technique that exploits vulnerabilities in an application's software by inserting malicious SQL statements into an entry field for execution. This can allow attackers to manipulate the database, retrieve sensitive data, or even modify or delete records.
+        </div>
+      </details>
+      <details class="flashcard"> <summary class="flashcard-question">Give an example of SQL injection?</summary>
+        <div class="flashcard-answer">An example of SQL injection is when a web application fails to properly sanitize user input, allowing an attacker to insert malicious SQL code. For instance, if a login form doesn't use parameterized queries, an attacker could enter the following in the username field:
+<pre><code>' OR '1'='1</code></pre>
+This would bypass authentication and potentially allow unauthorized access to the application.
+        </div>
+      </details>
+      <details class="flashcard"> <summary class="flashcard-question">How do you prevent SQL injection?</summary>
+        <div class="flashcard-answer">To prevent SQL injection, use parameterized queries or prepared statements, validate and sanitize user inputs, and follow the principle of least privilege when designing database access.
+        </div>
+      </details>
+      <details class="flashcard"> <summary class="flashcard-question">What is Cross-Site Scripting (XSS)?</summary>
+        <div class="flashcard-answer">Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. This can lead to unauthorized actions, data theft, or session hijacking.
+        </div>
+      </details>
+            <details class="flashcard"> <summary class="flashcard-question">Give an example of Cross-Site Scripting (XSS)?</summary>
+        <div class="flashcard-answer">An example of Cross-Site Scripting (XSS) is when a web application fails to properly sanitize user input, allowing an attacker to inject a malicious script. For instance, if a comment section on a website allows users to submit comments without escaping HTML, an attacker could submit a comment like:
+<pre><code>&lt;script&gt;alert('XSS Attack!');&lt;/script&gt;</code></pre>
+When other users view the comment, the script executes in their browsers, potentially stealing cookies or performing other malicious actions.
+        </div>
+      </details>
+
+          <details class="flashcard"> <summary class="flashcard-question">How do you prevent Cross-Site Scripting?</summary>
+        <div class="flashcard-answer">To prevent Cross-Site Scripting (XSS), sanitize (escape) and validate user inputs, use Content Security Policy (CSP) headers, encode output when displaying user-provided data, and implement proper security measures in your web application. Set httpOnly and Secure flags on cookies to protect against session hijacking.
+        </div>
+      </details>
+            <details class="flashcard"> <summary class="flashcard-question">What is Cross-Site Request Forgery (CSRF)?</summary>
+        <div class="flashcard-answer">Cross-Site Request Forgery (CSRF) is an attack that tricks a user into performing unintended actions on a web application where they are authenticated. It exploits the trust that a site has in the user's browser, potentially leading to unauthorized state changes or data manipulation.      
+        </div>
+      </details>
+            <details class="flashcard"> <summary class="flashcard-question">How do you prevent Cross-Site Request Forgery?</summary>
+        <div class="flashcard-answer">To prevent Cross-Site Request Forgery (CSRF), use anti-CSRF tokens, implement the SameSite cookie attribute, validate the origin of requests, and ensure that state-changing operations require explicit user confirmation.
+        </div>
+      </details>
+      <details class="flashcard"> <summary class="flashcard-question">Give an example of Cross-Site Request Forgery?</summary>
+        <div class="flashcard-answer">A common example is when a user is logged into their bank account and visits a malicious website. The malicious site could include a hidden form that submits a transfer request to the bank's server without the user's knowledge or consent.
+        </div>
+      </details>
+            <details class="flashcard"> <summary class="flashcard-question">What is the difference between Cross-Site Scripting and Cross-Site Request Forgery?</summary>
+        <div class="flashcard-answer">Cross-Site Scripting (XSS) involves injecting malicious scripts into web pages viewed by other users, while Cross-Site Request Forgery (CSRF) tricks a user into performing unintended actions on a web application where they are authenticated.
+        </div>
+      </details>
+      <details class="flashcard"> <summary class="flashcard-question">What is IDOR? What does it stand for?</summary>
+        <div class="flashcard-answer">IDOR stands for Insecure Direct Object Reference. It occurs when an application uses user-supplied input to access objects directly, without proper authorization checks.
+        </div>
+      </details>
+            <details class="flashcard"> <summary class="flashcard-question">Give an example of IDOR?</summary>
+        <div class="flashcard-answer">An example of IDOR is when a user can access another user's account information by simply changing the ID parameter in the URL, such as `https://example.com/user/123` to `https://example.com/user/456`.
+        </div>
+      </details>
+
+
+    </div>
+  </div>
+
   <div class="footer">
     <p>Created by Isabelle</p>
   </div>
