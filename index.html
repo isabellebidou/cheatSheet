@@ -11,7 +11,91 @@
 <body>
   <h1>Interview Cheatsheet</h1>
 
+
   <details class="content-section" open>
+
+
+
+    <summary>📄 Ollama Basics</summary>
+    <div class="container">
+      <div class="card">
+        <h2>terminal</h2>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Purpose</th>
+          </tr>
+          <tr>
+            <td><code>ollama run[Model]</code></td>
+            <td>checkes if model is downloaded and downloads it if not - starts the Ollama server
+              also switches to another model
+            </td>
+          </tr>
+          <tr>
+            <td><code>/?</code></td>
+            <td>shows available commands and options</td>
+          </tr>
+          <tr>
+            <td><code>/bye</code></td>
+            <td>exits the chat </td>
+          </tr>
+          <tr>
+            <td><code>ollama pull[Model]</code></td>
+            <td>Download a model from the Ollama Hub without starting the server</td>
+          </tr>
+          <tr>
+            <td><code>ollama list</code></td>
+            <td>displays a list of all models</td>
+          </tr>
+
+          <tr>
+            <td><code>rm [Model]</code></td>
+            <td>erases a model from the local storage</td>
+          </tr>
+          <tr>
+            <td><code>ollama serve</code></td>
+            <td>starts the Ollama server in the background</td>
+          </tr>
+          <tr>
+            <td><code>http://localhost:11434/</code></td>
+            <td>access the Ollama server via HTTP: "ollama is running"</td>
+          </tr>
+          <tr>
+            <td><code>curl http://localhost:11434/api/generate -d '{"model": "qwen2:7b", "prompt": "Why is the sky blue?", "stream": false}'</code></td>
+            <td>curl prompts the Ollama server to generate a response</td>
+          </tr>
+          
+        </table>
+      </div>  
+        </div>
+  </details>
+          <summary>📄 python Basics</summary>
+    <div class="container">
+      <div class="card">
+
+  <details class="content-section" open>
+<div class="card">
+        <h2>Python terminal commands</h2>
+<table>
+          <tr>
+            <th>prompt</th>
+            <th>Purpose</th>
+          </tr>
+          <td><code>pip --version</code></th>
+            <td>which version</td>
+          </tr>
+          <tr>
+            <td><code>pip install ollama</code></th>
+            <td>install a ollama to bridge with python</td>
+          </tr>
+          <tr>
+            <td><code>pip show ollama</code> </td>
+            <td>check the version of ollama installed</td>
+          </tr>
+          <tr>
+</table>
+
+
     <summary>📄 HTML Basics</summary>
     <div class="container">
       <div class="card">
@@ -1750,6 +1834,46 @@ export class CardComponent { @Input() name = ''; }</code></pre>
       <!-- Add <details class="flashcard"> elements here to create cards -->
     </div>
   </div>
+
+  <details class="content-section" open id="Security, APIs, and Web Development">
+    <summary>Security, APIs, and Web Development</summary>
+    <div class="container">
+      <div class="card">
+        <h2>Security, APIs, and Web Development</h2>
+        <p>Security is critical in web development to protect data, users, and systems from malicious attacks.</p>
+        <ul>
+          <li><strong>SQL Injection:</strong> Attackers inject malicious SQL queries to manipulate databases.</li>
+          <li><strong>Cross-Site Scripting (XSS):</strong> Attackers inject scripts into web pages viewed by others.</li>
+          <li><strong>Cross-Site Request Forgery (CSRF):</strong> Tricks users into performing actions they didn't intend.</li>
+          <li><strong>IDOR:</strong> Insecure Direct Object Reference allows unauthorized access to objects.</li>
+        </ul>
+    </div>
+    <div class="card">
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use parameterized queries to prevent SQL injection.</li>
+        <li>Sanitize and validate user inputs to prevent XSS.</li>
+        <li>Implement anti-CSRF tokens and SameSite cookies.</li>
+        <li>Perform proper authorization checks to avoid IDOR.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Best HTTP status codes</h2>
+      <ul>
+        <li><strong>200 OK:</strong> The request was successful.</li>
+        <li><strong>201 Created:</strong> The request was successful and a new resource was created.</li>
+        <li><strong>400 Bad Request:</strong> The server could not understand the request due to invalid syntax.</li>
+        <li><strong>401 Unauthorized:</strong> The client must authenticate itself to get the requested response.</li>
+        <li><strong >403 Forbidden:</strong> The client does not have access rights to the content.</li>
+        <li><strong>404 Not Found:</strong> The server can not find the requested resource.</li>
+        <li><strong>500 Internal Server Error:</strong> The server has encountered a situation it doesn't know how to handle.</li>    
+      </ul>
+    </div>
+  </details>
+
+
+
   <div class="flashcards-section">
     <h3>Security</h3>
     <div class="flashcards-grid">
@@ -1807,13 +1931,141 @@ When other users view the comment, the script executes in their browsers, potent
         <div class="flashcard-answer">An example of IDOR is when a user can access another user's account information by simply changing the ID parameter in the URL, such as `https://example.com/user/123` to `https://example.com/user/456`.
         </div>
       </details>
+      <details class="flashcard"> <summary class="flashcard-question">IDOR vs BOLA
+      </summary>
+        <div class="flashcard-answer">IDOR (Insecure Direct Object Reference) occurs when an application uses user-supplied input to access objects directly, without proper authorization checks. BOLA (Broken Object Level Authorization) is a more specific type of IDOR where the authorization check is bypassed at the object level. In essence, BOLA is a subset of IDOR for API endpoints.
+      </details>
+      <details class="flashcard"> <summary class="flashcard-question">what is p95/p99?
+      </summary>
+        <div class="flashcard-answer">P95 and P99 are performance metrics that represent the 95th and 99th percentiles of response times in a system. P95 indicates that 95% of requests are faster than this time, while P99 indicates that 99% of requests are faster. These metrics help identify outliers and assess system performance under load.
+  </details>
+        <details class="flashcard"> <summary class="flashcard-question"> explain the difference between 401 and 403?
+      </summary>
+        <div class="flashcard-answer">401 Unauthorized indicates that the user is not authenticated, while 403 Forbidden indicates that the user is authenticated but does not have permission to access the requested resource.
+  </details>
+    </details>
+        <details class="flashcard"> <summary class="flashcard-question"> explain the difference between 400 and 500?what typically causes each?
+      </summary>
+        <div class="flashcard-answer">400 Bad Request indicates that the client sent a malformed request, while 500 Internal Server Error indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.
+  </details>
 
+  <details class="flashcard"> <summary class="flashcard-question"> explain POST vs PUT vs PATCH
+      </summary>
+        <div class="flashcard-answer">POST is used to create a new resource, PUT is used to update an existing resource, and PATCH is used to make partial updates to an existing resource.
+  </details>
+
+    <details class="flashcard"> <summary class="flashcard-question"> In which case is it dangerous to use PUT instead of PATCH? and why?
+      </summary>
+        <div class="flashcard-answer">Using PUT instead of PATCH can be dangerous when you want to update only specific fields of a resource. PUT replaces the entire resource with the new data, which can lead to unintentional loss of data if not all fields are provided. PATCH, on the other hand, allows for partial updates, modifying only the specified fields while leaving the rest of the resource intact.
+  </details>
+    <details class="flashcard"> <summary class="flashcard-question"> is POST idempotent? and why?
+      </summary>
+        <div class="flashcard-answer">POST is not idempotent because each request creates a new resource. If you make the same POST request multiple times, it will create multiple resources with different IDs.
+  </details>
+  <details class="flashcard"> <summary class="flashcard-question"> What is a parameterized query? give an example.
+      </summary>
+        <div class="flashcard-answer">A parameterized query is a query that uses parameters to replace values, preventing SQL injection attacks. For example, instead of concatenating user input directly into a query string, you would use a parameterized query like `SELECT * FROM users WHERE id = ?` and pass the user input as a parameter.
+  </details>
+  <details class="flashcard"> <summary class="flashcard-question"> How would you validate the input of a client review form to prevent XSS attacks?Give an example of code escaping a <code>&lt;script&gt; tag.
+      </summary>
+        <div class="flashcard-answer">To prevent XSS attacks, you should sanitize user input by escaping HTML characters and using a whitelist of allowed tags and attributes. 
+
+        </details>
 
     </div>
   </div>
 
+
+
+   <details class="content-section" open id="SQL vs MongoDB">
+    <summary></summary>
+    <div class="container">
+      <div class="card">
+        <h2>SQL vs MongoDB</h2>
+        <p></p>
+        <table>
+          <tr>
+            <th>SQL</th>
+            <th>MongoDB</th>
+          </tr>
+          <tr>
+            <td>Relational database</td>
+            <td>Document-oriented NoSQL database</td>
+          </tr>
+          <tr>
+            <td>Uses structured query language (SQL)</td>
+            <td>Uses a flexible, JSON-like query language</td>
+          </tr>
+          <tr>
+            <td>Data is stored in tables with rows and columns</td>
+            <td>Data is stored in collections of documents (BSON format)</td>
+          </tr>
+          <tr>
+            <td>Schema is predefined and rigid</td>
+            <td>Schema is dynamic and flexible</td>
+          </tr>
+          <tr>
+            <td>Supports complex joins and transactions</td>
+            <td>Limited support for joins; transactions are supported but less common</td>
+          </tr>
+        </table>
+    </div>
+    <div class="card">
+      <h2>CRUD Operations</h2>
+      <table>
+        <tr>
+          <th>Operation</th>
+          <th>SQL</th>
+          <th>MongoDB</th>
+        </tr>
+        <tr>
+          <td>Create</td>
+          <td>INSERT INTO table_name (column1, column2) VALUES (value1, value2);</td>
+          <td>db.collection.insertOne({ field1: value1, field2: value2 });</td>
+        </tr>
+        <tr>
+          <td>Read</td>
+          <td>SELECT * FROM table_name WHERE condition;</td>
+          <td>db.collection.find({ field: value });</td>
+        </tr>
+        <tr>
+          <td>Update</td>
+          <td>UPDATE table_name SET column1 = value1 WHERE condition;</td>
+          <td>db.collection.updateOne({ field: value }, { $set: { field: newValue } });</td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>DELETE FROM table_name WHERE condition;</td>
+          <td>db.collection.deleteOne({ field: value });</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Joins</h2>
+           <p>SQL databases support joins to combine data from multiple tables based on related columns. MongoDB does not have traditional joins, but it can perform similar operations using the aggregation framework or by embedding related data within documents.</p>
+      <p>MongoDB's $lookup stage is used to perform left outer joins between collections.</p>
+      <table>
+        <tr>
+          <th>Join Type</th>
+          <th>SQL</th>
+          <th>MongoDB</th>
+        </tr>
+        <tr>
+          <td>INNER JOIN</td>
+          <td>SELECT * FROM table1 INNER JOIN table2 ON table1.id = table2.id;</td>
+          <td>db.collection.aggregate([{ $lookup: { from: "otherCollection", localField: "field1", foreignField: "field2", as: "joinedData" } }]);</td>
+        </tr>
+        
+      </table>
+    
+
+    </div>
+  </details>
+
+
   <div class="footer">
-    <p>Created by Isabelle</p>
+    <p>Created by Isabelle- copyright <script>document.write(new Date().getFullYear())</script></p>
   </div>
 
   <script>
