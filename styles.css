@@ -1,286 +1,305 @@
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f3f5f7;
-    margin:40px;
-    line-height:1.5;
+   :root {
+      --bg: #e9dde5;
+      --surface: #fff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #e4e7ec;
+      --accent: #4f46e5;
+      --code: #111827;
+      --shadow: 0 2px 12px rgba(16, 24, 40, .06)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(165, 29, 133, 0.07);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .nav a {
+      font-size: .85rem;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px
+    }
+
+    .nav a:hover {
+      border-color: var(--accent);
+      color: var(--accent)
+    }
+.homeLink{
+    border: 1px solid rgba(165, 29, 133, 1);
+    background-color: #4f46e5;
+}
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px 20px 80px
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin: 0 0 8px
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 0
+    }
+
+    h3 {
+      font-size: 1.05rem
+    }
+
+    .intro {
+      color: var(--muted);
+      margin-bottom: 24px
+    }
+
+    .topic {
+      scroll-margin-top: 80px;
+      margin: 28px 0 48px
+    }
+
+    .topic>details>summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 1.65rem;
+      font-weight: 750;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow)
+    }
+
+    .topic>details>summary::-webkit-details-marker {
+      display: none
+    }
+
+    .topic>details>summary:before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 10px;
+      transition: .15s
+    }
+
+    .topic>details[open]>summary:before {
+      transform: rotate(90deg)
+    }
+
+    .content {
+      padding-top: 16px
+    }
+
+    .container {
+      margin: 0 0 16px
+    }
+
+    .card,
+    .cheatsheet-card,
+    .note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 14px 0;
+      box-shadow: var(--shadow)
+    }
+
+    .note {
+      border-left: 4px solid var(--accent)
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      padding: 9px
+    }
+
+    th {
+      font-weight: 700;
+      background: #fafafa
+    }
+    tr:nth-child(even) {
+    background-color: #e9dde5;
 }
 
-h1{
-    text-align:center;
-}
-
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-    align-items:start;
-    width:100%;
-}
-
-.card{
-    background:#ffffff;
-    padding:20px;
-    border-radius:14px;
-    border:1px solid #e5eaf0;
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.card h2{
-
-    margin-top:0;
-    color:#1565c0;
-}
-
-.flow{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-    margin-top:20px;
-}
-
-.box{
-
-    background:#1976d2;
-    color:white;
-    padding:6px;
-    width:90%;
-    border-radius:8px;
-    text-align:center;
-}
-
-.arrow{
-
-    font-size:28px;
-}
-
-table{
-
-    width:100%;
-    border-collapse:collapse;
-}
-
-th{
-
-    background:#1976d2;
-    color:white;
-}
-
-th,td{
-
-    padding:10px;
-    border:1px solid #ddd;
-}
-
-code{
-    background:#eef2ff;
-    color:#213c66;
-    padding:2px 6px;
-    border-radius:4px;
-}
-
-.card pre{
-    background:#0f172a;
-    color:#f8fafc;
-    padding:14px;
-    border-radius:10px;
-    overflow:auto;
-    margin:0;
-    font-size:14px;
-    line-height:1.5;
-    display:block;
-    width:90%;
-    max-width:100%;
-    box-sizing:border-box;
-    flex-shrink:0;
-    white-space:pre;
-}
-
-.card pre code{
-    display:block;
-    white-space:pre;
-    overflow-x:auto;
-}
-
-.good{
-
-    color:green;
-    font-weight:bold;
-}
-
-.bad{
-
-    color:red;
-    font-weight:bold;
-}
-
-.accessibility-content ul{
-    list-style-position: inside;
-}
-
-.accessibility-content li{
-    margin: 6px 0;
-}
-
-.content-section{
-    margin-bottom: 30px;
-}
-
-.content-section summary{
-    font-size: 20px;
-    font-weight: bold;
-    color: #1565c0;
-    padding: 15px 20px;
-    background: #f0f4f8;
-    border-radius: 8px;
+    code {
+      
+      color: var(--code)
+    }
+code {
+ background: #f2f4f7;
+      padding: 2px 5px;
+      border-radius: 5px;
+    font-family: monospace;
+    overflow-x: auto;
     cursor: pointer;
-    user-select: none;
-    transition: background 0.3s ease;
-    border-left: 4px solid #1565c0;
 }
 
-.content-section summary:hover{
-    background: #e3f2fd;
+code:hover {
+    background: #b0a3ae;
 }
+    pre {
+      overflow: auto;
+      background: #111827;
+      color: #f9fafb;
+      padding: 14px;
+      border-radius: 9px
+    }
 
-.content-section summary::marker{
-    color: #1565c0;
-}
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0
+    }
 
-.flashcards-section{
-    margin: 0 0 30px;
-}
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 16px 0
+    }
 
-.flashcards-section h3{
-    color: #1565c0;
-    margin-bottom: 12px;
-}
+    .box {
+      padding: 10px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px
+    }
 
-.flashcards-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
-}
+    .arrow {
+      color: var(--muted)
+    }
 
-/* support both button.flashcard and details.flashcard */
-.flashcard{
-    border:none;
-    background:white;
-    border-radius:14px;
-    padding:16px;
-    text-align:left;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    min-height:120px;
-}
+    .flashcards {
+      margin-top: 18px
+    }
 
-details.flashcard{
-    /* details uses default display; override to match button layout */
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
+    .flashcards>h3 {
+      margin-bottom: 8px
+    }
 
-details.flashcard summary{
-    list-style:none;
-    cursor:pointer;
-    outline:none;
-    /* make the summary fill the whole card so clicks anywhere toggle */
-    display:block;
-    padding:10px;
-    margin: 2px; 
-    width:90%;
-}
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      margin: 8px 0;
+      background: var(--surface)
+    }
 
-/* ensure the details element doesn't double-pad (we move padding to summary) */
-details.flashcard{
-    padding:0;
-}
+    .flashcard summary {
+      cursor: pointer;
+      padding: 11px 14px;
+      font-weight: 650
+    }
 
-.flashcard-question{
-    font-weight:bold;
-    color:#0f172a;
-}
+    .flashcard-answer {
+      padding: 0 14px 14px
+    }
 
-.flashcard-answer{
-    color:#5475a3;
-    display:none;
-    margin: 2px;
-    line-height:1.4;
-    padding: 0px;
-}
+    .search {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: var(--surface);
+      margin: 8px 0 4px
+    }
 
-/* when using details, rely on the [open] attribute */
-details.flashcard[open] .flashcard-answer{
-    display:block;
-}
+    .top {
+      display: block;
+      text-align: right;
+      margin-top: 12px;
+      font-size: .85rem
+    }
 
-/* also support JS-toggled class for backward compatibility */
-.flashcard.is-open .flashcard-answer{
-    display:block;
-}
+    .warning {
+      border-left: 4px solid #d97706
+    }
 
-.flashcard.is-open{
-    border:1px solid #1565c0;
-}
-.cheatsheet-card{
-    background:#fff;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-}
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px 0
+    }
 
-.react-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
-}
+    .index {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 20px 0
+    }
 
-.react-table th{
-    background:#1976d2;
-    color:white;
-    padding:12px;
-}
+    .index a {
+      display: block;
+      padding: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit
+    }
 
-.react-table td{
-    padding:12px;
-    border:1px solid #ddd;
-    vertical-align:top;
-}
+    .hidden {
+      display: none !important
+    }
 
-.react-table tr:nth-child(even){
-    background:#f7f7f7;
-}
+    @media(max-width:700px) {
+      main {
+        padding: 20px 12px 60px
+      }
 
-.note{
-    margin-top:20px;
-    padding:15px;
-    border-left:5px solid #1976d2;
-    background:#eef6ff;
-}
+      h1 {
+        font-size: 1.8rem
+      }
 
-code{
-    background:#efefef;
-    padding:2px 5px;
-    border-radius:4px;
-}
+      .topic>details>summary {
+        font-size: 1.35rem
+      }
 
-/* Agentic AI section styles */
-#agentic-ai .card h2{
-    color:#b71c1c;
-}
-#agentic-ai .card p,
-#agentic-ai .card li{
-    color:#263238;
-}
-#agentic-ai .card ul{
-    margin:8px 0;
-    padding-left:20px;
-}
+      table {
+        font-size: .9rem
+      }
+    }
