@@ -12,17 +12,16 @@
 
 <body>
   <header>
-    <nav class="nav"><a href="#git">Git</a><a href="#ollama">Ollama</a><a
-        href="#javascript">JavaScript</a><a href="#typescript">TypeScript</a><a href="#css">CSS</a><a
-        href="#react">React</a><a href="#angular">Angular</a><a href="#node">Node.js</a><a href="#python">Python</a><a
+    <nav class="nav"><a href="#git">Git</a><a href="#ollama">Ollama</a><a href="#javascript">JavaScript</a><a
+        href="#typescript">TypeScript</a><a href="#css">CSS</a><a href="#react">React</a><a
+        href="#angular">Angular</a><a href="#node">Node.js</a><a href="#python">Python</a><a
         href="#databases">Databases</a><a href="#security">Security</a><a href="#ai">Agentic AI</a><a
-        href="#interview">Interview</a><a class = "homeLink" href="https://isabellebidou.com/">Home</a></nav>
+        href="#interview">Interview</a><a class="homeLink" href="https://isabellebidou.com/">Home</a></nav>
   </header>
   <main id="home">
     <h1>Tech Knowledge Base</h1>
     <p class="intro">Quick lookup, concepts, recipes, troubleshooting, and interview
-      practice flashcards</p><input id="search" class="search"
-      placeholder="Search this knowledge base…">
+      practice flashcards</p><input id="search" class="search" placeholder="Search this knowledge base…">
     <div class="index"><a href="#git"><strong>Git</strong></a><a href="#ollama"><strong>Ollama</strong></a><a
         href="#javascript"><strong>JavaScript</strong></a><a href="#typescript"><strong>TypeScript</strong></a><a
         href="#css"><strong>CSS</strong></a><a href="#react"><strong>React</strong></a><a
@@ -174,28 +173,17 @@
           <div class="card">
             <p>I find out I have been working on the wrong git branch
               How can I move all exitsting uncommited changes to my other branch?</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>stash</th>
-                  <th>switch</th>
-                </tr>
-              </thead>
-              <tr>
-                <td>
-                  <pre>
+
+            <pre>
 <code>git stash</code>
 <code>git checkout [other_branch]</code>
 <code>git stash pop</code>
         </pre>
-                </td>
-                <td>
-                  <pre>
-                  <code>git switch [other_branch]</code>
+            or
+            <pre>
+<code>git switch [other_branch]</code>
                 </pre>
-                </td>
-              </tr>
-            </table>
+
           </div><a class="top" href="#home">↑ Back to top</a>
         </div>
       </details>
@@ -1989,9 +1977,9 @@ export class CardComponent { @Input() name = ''; }</code></pre>
       </details>
     </section>
     <footer>
-        <span>Isabelle Bidou - copyright
-            <script>document.write(new Date().getFullYear())</script>
-        </span>
+      <span>Isabelle Bidou - copyright
+        <script>document.write(new Date().getFullYear())</script>
+      </span>
     </footer>
   </main>
 </body>
