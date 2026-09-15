@@ -88,31 +88,31 @@
                   <td>List local branches.</td>
                 </tr>
                 <tr>
-                  <td><code>git branch [your_branch_name]</code></td>
+                  <td><code>git branch &lt;your_branch_name&gt;</code></td>
                   <td>Create a new branch.</td>
                 </tr>
                 <tr>
-                  <td><code>git checkout [your_branch_name]</code></td>
+                  <td><code>git checkout &lt;your_branch_name&gt;</code></td>
                   <td>Switch to a branch.</td>
                 </tr>
                 <tr>
-                  <td><code>git switch [your_branch_name]</code></td>
+                  <td><code>git switch &lt;your_branch_name&gt;</code></td>
                   <td>Switch to a branch (modern command).</td>
                 </tr>
                 <tr>
-                  <td><code>git checkout -b [your_branch_name]</code></td>
+                  <td><code>git checkout -b &lt;your_branch_name&gt;</code></td>
                   <td>Create and switch to a new branch.</td>
                 </tr>
                 <tr>
-                  <td><code>git switch -c [your_branch_name]</code></td>
+                  <td><code>git switch -c &lt;your_branch_name&gt;</code></td>
                   <td>Create and switch to a new branch (modern command).</td>
                 </tr>
                 <tr>
-                  <td><code>git merge [your_branch_name]</code></td>
+                  <td><code>git merge &lt;your_branch_name&gt;</code></td>
                   <td>Merge a branch into the current branch.</td>
                 </tr>
                 <tr>
-                  <td><code>git rebase [your_branch_name]</code></td>
+                  <td><code>git rebase &lt;your_branch_name&gt;</code></td>
                   <td>Reapply commits on top of another branch.</td>
                 </tr>
                 <tr>
@@ -132,7 +132,7 @@
                   <td>Push local commits to the remote repository.</td>
                 </tr>
                 <tr>
-                  <td><code>git push -u origin [your_branch_name]</code></td>
+                  <td><code>git push -u origin &lt;your_branch_name&gt;</code></td>
                   <td>Push a new branch and set upstream tracking.</td>
                 </tr>
                 <tr>
@@ -176,15 +176,33 @@
 
             <pre>
 <code>git stash</code>
-<code>git checkout [other_branch]</code>
+<code>git checkout &lt;other_branch&gt;</code>
 <code>git stash pop</code>
-        </pre>
+           or
+            
+<code>git switch &lt;other_branch&gt;</code>
+            </pre>
             or
             <pre>
-<code>git switch [other_branch]</code>
-                </pre>
+<code>git switch &lt;other_branch&gt;</code>
+            </pre>
 
-          </div><a class="top" href="#home">↑ Back to top</a>
+           </div>
+
+                     <div class="card">
+            <p>I want to push to 2 remote urls I can rename the existing remote or add it using a flag</p>
+
+            <pre>
+<code>git remote rename origin hf &lt;https://huggingface.co..... &gt;</code>
+<code>git remote add origin hf &lt;https://huggingface.co.....&gt;</code> 
+<code>git remote add origin github &lt;https://github.com.....&gt;</code>
+<code>git push hf main</code>
+           then use the flag when pushing:
+<code>git push hf main</code>
+            </pre>
+
+           </div>
+          <a class="top" href="#home">↑ Back to top</a>
         </div>
       </details>
     </section>
