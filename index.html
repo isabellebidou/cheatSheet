@@ -195,9 +195,9 @@
             <p>I want to push to 2 remote urls I can rename the existing remote or add it using a flag</p>
 
             <pre>
-<code>git remote rename origin hf &lt;https://huggingface.co..... &gt;</code>
-<code>git remote add origin hf &lt;https://huggingface.co.....&gt;</code> 
-<code>git remote add origin github &lt;https://github.com.....&gt;</code>
+<code>git remote set-url origin &lt;https://huggingface.co..... &gt;</code>
+<code>git remote add hf &lt;https://huggingface.co.....&gt;</code> 
+<code>git remote add github &lt;https://github.com.....&gt;</code>
 <code>git push hf main</code>
            then use the flag when pushing:
 <code>git push hf main</code>
