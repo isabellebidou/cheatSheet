@@ -182,7 +182,7 @@
             </table>
           </div>
           <div class="card">
-            <p>I find out I have been working on the wrong git branch
+            <p>I find out I have been working on the wrong git branch 😭
               How can I move all exitsting uncommited changes to my other branch?</p>
 
             <pre>
@@ -201,7 +201,7 @@
            </div>
 
                      <div class="card">
-            <p>I want to push to 2 remote urls I can rename the existing remote or add it using a flag</p>
+            <p>I want to push to 2 remote urls. How can I rename the existing remote and add it using a different remote name?</p>
 
             <pre>
 <code>git remote set-url origin &lt;https://huggingface.co..... &gt;</code>
@@ -213,6 +213,83 @@
             </pre>
 
            </div>
+
+           <div class="card">
+            <p>I want to push my new feature to production. I am using Continuous deployment. Anything pushed to main is automatically published. What is the safe flow?</p>
+            <p>The standard industry practice for Continuous Deployment (GitHub Flow). 
+          No manual backup branches, no direct pushes to main, 
+          and all testing happens before production.</p>
+<table>
+  <thead>
+    <tr>
+      <th>unsafe flow ❌</th>
+      <th>safe flow ✅</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        
+        <ol>
+          <li> on the feature branch let's say 'dev' add your files, commit and push to origin dev</li>
+          <li> checkout to the back up branch and , pull  and merge the main branch into to and push it to origin backup</li>
+          <li> on the production branch let's say 'main' pull and merge dev into main, commit and push to origin main</li>
+        </ol>
+        <pre>// on the feature branch check everything is ready to push 
+          and push to the remote
+<code>git checkout dev</code>
+<code>git pull</code>
+<code>git push origin dev</code>// checkout to the backup branch, 
+// this is the fall back branch. 
+// merge the existing production state into it 
+<code>git checkout backup</code>
+<code>git pull</code>
+<code>git merge main</code>
+<code>git push origin backup</code>
+// checkout to the production branch
+// merge the new feature 
+// from the feature branch into it
+<code>git checkout main</code>
+<code>git pull </code>
+<code>git merge dev</code>
+<code>git push origin main</code>
+        </pre>
+      </td>
+      <td>
+        
+        <ol>
+          <li>Update your local feature branch with the latest production code to catch and fix conflicts early.</li>
+          <li>Push your feature branch to the remote repository and open a Pull Request (PR) into main.</li>
+          <li>Let automated tests (CI) run on the PR, get a review, and click "Merge" on GitHub to automatically deploy.</li>
+        </ol>
+        <pre>// 1. Bring production changes into dev and test locally
+// be ready to resolve merge issues if someone pushed new changes.
+<code>git checkout dev</code>
+<code>git pull origin main</code>
+# RESOLVE CONFLICTS - RUN YOUR TESTS LOCALLY
+<code>git push origin dev</code>
+
+// 2. Open a Pull Request on GitHub (dev -> main)
+// new pull request
+// on the first drop down (choose a base ref): main
+// on the second one(choose a head ref) : dev 
+// Do NOT merge in the terminal. Let GitHub run CI tests.
+
+// 3. Click "Merge" on GitHub (once tests pass). 
+// automatically builds and deploys to production.
+
+// 4. bug ? use your hosting platform dashboard
+// to roll back to the previous stable build artifact.
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>Disclaimer: Use these commands at your own discretion and always check what a command will do before running it. I’m not responsible for any loss or damage resulting from their use.</p>
+
+</div>
+     
+ 
           <a class="top" href="#home">↑ Back to top</a>
         </div>
       </details>
@@ -2006,6 +2083,7 @@ export class CardComponent { @Input() name = ''; }</code></pre>
       </details>
     </section>
     <footer>
+      <p>Disclaimer: Use commands  and statements at your own discretion and always check what a command or statement does before running it. I’m not responsible for any loss or damage resulting from the use of any command or statement presented on this website.</p>
       <span>Isabelle Bidou - copyright
         <script>document.write(new Date().getFullYear())</script>
       </span>
