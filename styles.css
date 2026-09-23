@@ -136,7 +136,10 @@
       margin: 14px 0;
       box-shadow: var(--shadow)
     }
-
+.in_card{
+  max-width: 100%;
+  overflow:auto;
+}
     .note {
       border-left: 4px solid var(--accent)
     }
