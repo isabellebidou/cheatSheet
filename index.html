@@ -291,6 +291,90 @@ then use the remote name when pushing:
         </div>
       </details>
     </section>
+    <section class="topic" id="Docker">
+      <details>
+        <summary>n8n with self hosted Docker</summary>
+        <div class="content">
+<div class="card">
+     <h2>Installation</h2>
+      <ul>
+        <li># Download and install Docker Desktop from the official website.</li>
+        <li># Open Docker Desktop </li>
+        <li># 1 Check that Docker is running and that the Docker daemon is active.</li>
+        <li># docker --version</li>
+         <li># docker ps</li>
+         <li># 2 Create persistent storage</li>
+         <li># docker volume create n8n_data => you should see 'n8n_data'</li>
+         <li># 3 Create and start your n8n container</li>
+         <li><pre><code>// download  create and start 
+  docker run -d \
+  --name n8n \
+  --restart unless-stopped \
+  -p 127.0.0.1:5678:5678 \
+  -e TZ=Europe/Paris \
+  -e GENERIC_TIMEZONE=Europe/Paris \
+  -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
+  -e N8N_RUNNERS_ENABLED=true \
+  -v n8n_data:/home/node/.n8n \
+  docker.n8n.io/n8nio/n8n</code></pre></li>
+  <li> # 4check the container is running with docker ps</li>
+  <li> # 5 Access the web interface with http://localhost:5678 in your browser.</li>
+      </ul>
+
+      <h2>Usage</h2>
+  <ul>
+    <li># Start Docker Desktop first</li> 
+    <li>then:
+docker start n8n</li>
+<li>Open http://localhost:5678 in your browser.</li>
+  </ul>
+
+</div>
+
+
+
+          <div class="card">
+
+
+            <h2>terminal</h2>
+            <table>
+              <tr>
+                <th>Command</th>
+                <th>Purpose</th>
+              </tr>
+              <tr>
+                <td><code>docker start n8n</code></td>
+                <td>Start n8n</td>
+              </tr>
+              <tr>
+                <td><code>docker stop n8n</code></td>
+                <td>Stop n8n</td>
+              </tr>
+              <tr>
+                <td><code>docker restart n8n</code></td>
+                <td>Restart n8n</td>
+              </tr>
+              <tr>
+                <td><code>docker ps-a</code></td>
+                <td>lists all containers</td>
+              </tr>
+              <tr>
+                <td><code>docker images</code></td>
+                <td>lists available images</td>
+              </tr>
+
+
+            </table>
+
+          </div>
+
+          </div><a class="top" href="#home">↑ Back to top</a>   
+      </div>
+    </details>
+    </section>
+
+
+
     <section class="topic" id="ollama">
       <details>
         <summary>Ollama</summary>
