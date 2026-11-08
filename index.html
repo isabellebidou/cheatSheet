@@ -49,8 +49,8 @@
             <table>
               <thead>
                 <tr>
-                  <th>Command</th>
-                  <th>Function</th>
+                  <th colspan="2">Set up</th>
+             
                 </tr>
               </thead>
               <tbody>
@@ -67,6 +67,25 @@
                   <td>Display working tree status and staged changes.</td>
                 </tr>
                 <tr>
+                  <td><code>git config --global user.name "Your Name"</code></td>
+                  <td>Set your Git username globally.</td>
+                </tr>
+                <tr>
+                  <td><code>git config --global user.email "Your Email"</code></td>
+                  <td>Set your Git email globally.</td>
+                </tr>
+                </tbody>
+                </table>
+
+                <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Workflow</th>
+             
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
                   <td><code>git add &lt;file&gt;</code></td>
                   <td>Stage a specific file for commit.</td>
                 </tr>
@@ -78,22 +97,34 @@
                   <td><code>git commit -m "message"</code></td>
                   <td>Create a commit with a message.</td>
                 </tr>
-                <tr>
-                  <td><code>git log</code></td>
-                  <td>Show commit history.</td>
+                  <tr>
+                  <td><code>git commit -am "message"</code></td>
+                  <td>add and commit with a message.</td>
+                </tr>
+                                <tr>
+                  <td><code>git pull</code></td>
+                  <td>Fetch and merge remote changes.</td>
                 </tr>
                 <tr>
-                  <td><code>git log --oneline</code></td>
-                  <td>Show compact commit history.</td>
+                  <td><code>git push</code></td>
+                  <td>Push local commits to the remote repository.</td>
                 </tr>
                 <tr>
-                  <td><code>git diff</code></td>
-                  <td>Show unstaged changes.</td>
+                  <td><code>git push -u origin &lt;your_branch_name&gt;</code></td>
+                  <td>Push a new branch and set upstream tracking.</td>
                 </tr>
+              </tbody>
+                </table>
+
+                <table>
+              <thead>
                 <tr>
-                  <td><code>git diff --staged</code></td>
-                  <td>Show staged changes.</td>
+                  <th colspan="2">Branching</th>
+             
                 </tr>
+              </thead>
+              <tbody>
+
                 <tr>
                   <td><code>git branch</code></td>
                   <td>List local branches.</td>
@@ -118,35 +149,62 @@
                   <td><code>git switch -c &lt;your_branch_name&gt;</code></td>
                   <td>Create and switch to a new branch (modern command).</td>
                 </tr>
+
+              </tbody>
+            </table>
+
+            <table>
+              <thead>
                 <tr>
-                  <td><code>git merge &lt;your_branch_name&gt;</code></td>
-                  <td>Merge a branch into the current branch.</td>
+                  <th colspan="2">Undo</th>
+             
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td><code>git reset &lt;commit_hash&gt;</code></td>
+                  <td>Reset to a specific commit.</td>
                 </tr>
                 <tr>
-                  <td><code>git rebase &lt;your_branch_name&gt;</code></td>
-                  <td>Reapply commits on top of another branch.</td>
+                  <td><code>git reset --soft HEAD~1</code></td> 
+                  <td>Reset to the previous commit, keeping changes staged.</td>
                 </tr>
                 <tr>
-                  <td><code>git remote -v</code></td>
-                  <td>List configured remote repositories.</td>
+                  <td><code>git reset --hard HEAD~1</code></td>
+                  <td>Reset to the previous commit, discarding changes.</td>  
                 </tr>
                 <tr>
-                  <td><code>git fetch</code></td>
-                  <td>Download changes from remotes without merging.</td>
+                  <td><code>git revert &lt;commit_hash&gt;</code></td>
+                  <td>Revert a specific commit.</td>
                 </tr>
                 <tr>
-                  <td><code>git pull</code></td>
-                  <td>Fetch and merge remote changes.</td>
+                  <td><code>git clean -f</code></td>
+                  <td>Remove untracked files from the working directory.</td>   
                 </tr>
                 <tr>
-                  <td><code>git push</code></td>
-                  <td>Push local commits to the remote repository.</td>
+                  <td> <code>git restore &lt;file_path&gt;</code></td>
+                  <td>Restore a file to its last committed version.</td>
                 </tr>
                 <tr>
-                  <td><code>git push -u origin &lt;your_branch_name&gt;</code></td>
-                  <td>Push a new branch and set upstream tracking.</td>
+                  <td><code>git restore --staged &lt;file_path&gt;</code></td>    
+                  <td>Unstage a file.</td>
                 </tr>
                 <tr>
+                  <td><code>git restore</code></td>
+                  <td>Restore the working directory to its last committed state.</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Stash</th>
+             
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
                   <td><code>git stash</code></td>
                   <td>Temporarily save uncommitted changes.</td>
                 </tr>
@@ -155,13 +213,85 @@
                   <td>Restore the most recent stashed changes.</td>
                 </tr>
                 <tr>
-                  <td><code>git reset --hard HEAD</code></td>
-                  <td>Discard all local uncommitted changes.</td>
+                  <td><code>git stash list</code></td>
+                  <td>List all stashed changes.</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Log and Diff</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>git log</code></td>
+                  <td>Show commit history.</td>
                 </tr>
                 <tr>
-                  <td><code>git revert &lt;commit_hash&gt;</code></td>
-                  <td>Create a new commit that reverses a previous commit.</td>
+                  <td><code>git log --oneline</code></td>
+                  <td>Show compact commit history.</td>
                 </tr>
+                <tr>
+                  <td><code>git diff</code></td>
+                  <td>Show unstaged changes.</td>
+                </tr>
+                <tr>
+                  <td><code>git diff --staged</code></td>
+                  <td>Show staged changes.</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Remote</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td><code>git remote -v</code></td>
+                  <td>List configured remote repositories.</td>
+                </tr>
+                <tr><td><code>git remote add &lt;remote_name&gt; &lt;url&gt;</code></td>
+                  <td>Add a new remote repository.</td>
+                </tr>
+                <tr><td><code>git remote set-url &lt;remote_name&gt; &lt;url&gt;</code></td>
+                  <td>Change the URL of an existing remote.</td>
+                </tr>
+                <tr>
+                  <td><code>git fetch</code></td>
+                  <td>Download changes from remotes without merging.</td>
+                </tr>
+                <tr><td><code>git pull origin &lt;remote_name&gt;</code></td>
+                  <td>pull from specific remote  branch.</td>
+                </tr>
+                <tr>
+                  <td><code>git push origin --delete &lt;branch_name&gt;</code></td>
+                  <td>Delete a remote branch.</td>
+
+                </tr>
+              </tbody>
+            </table>
+<table>
+              <thead>
+                <tr>
+                  <th colspan="2">other</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td><code>git merge &lt;your_branch_name&gt;</code></td>
+                  <td>Merge a branch into the current branch.</td>
+                </tr>
+                <tr>
+                  <td><code>git rebase &lt;your_branch_name&gt;</code></td>
+                  <td>Reapply commits on top of another branch.</td>
+                </tr>
+                
                 <tr>
                   <td><code>git rm &lt;file&gt;</code></td>
                   <td>Remove a file and stage the deletion.</td>
@@ -317,16 +447,15 @@ then use the remote name when pushing:
   -e N8N_RUNNERS_ENABLED=true \
   -v n8n_data:/home/node/.n8n \
   docker.n8n.io/n8nio/n8n</code></pre></li>
-  <li> # 4check the container is running with docker ps</li>
-  <li> # 5 Access the web interface with http://localhost:5678 in your browser.</li>
+  <li> # 4check the container is running with <pre><code>docker ps</code></pre></li>
+  <li> # 5 Access the web interface with <pre><code>http://localhost:5678</code></pre> in your browser.</li>
       </ul>
 
-      <h2>Usage</h2>
+      <h2>Usage once the first set up is done</h2>
   <ul>
-    <li># Start Docker Desktop first</li> 
-    <li>then:
-docker start n8n</li>
-<li>Open http://localhost:5678 in your browser.</li>
+    <li># Start Docker Desktop</li> 
+
+<li>Open <pre><code>http://localhost:5678</code></pre> in your browser.</li>
   </ul>
 
 </div>
@@ -388,7 +517,7 @@ docker start n8n</li>
               </tr>
               <tr>
                 <td><code>ollama run[Model]</code></td>
-                <td>checkes if model is downloaded and downloads it if not - starts the Ollama server
+                <td>checks if model is downloaded and downloads it if not - starts the Ollama server
                   also switches to another model
                 </td>
               </tr>
