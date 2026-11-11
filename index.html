@@ -23,7 +23,7 @@
 
 <body>
   <header>
-    <nav class="nav"><a href="#git">Git</a><a href="#ollama">Ollama</a><a href="#javascript">JavaScript</a><a
+    <nav class="nav"><a href="#git">Git</a><a href="#claude">Claude</a><a href="#n8n">n8n</a><a href="#ollama">Ollama</a><a href="#javascript">JavaScript</a><a
         href="#typescript">TypeScript</a><a href="#css">CSS</a><a href="#react">React</a><a
         href="#angular">Angular</a><a href="#node">Node.js</a><a href="#python">Python</a><a
         href="#databases">Databases</a><a href="#security">Security</a><a href="#ai">Agentic AI</a><a
@@ -33,13 +33,7 @@
     <h1>Tech Knowledge Base</h1>
     <p class="intro">Quick lookup, concepts, recipes, troubleshooting, and interview
       practice flashcards</p><input id="search" class="search" placeholder="Search this knowledge base…">
-    <div class="index"><a href="#git"><strong>Git</strong></a><a href="#ollama"><strong>Ollama</strong></a><a
-        href="#javascript"><strong>JavaScript</strong></a><a href="#typescript"><strong>TypeScript</strong></a><a
-        href="#css"><strong>CSS</strong></a><a href="#react"><strong>React</strong></a><a
-        href="#angular"><strong>Angular</strong></a><a href="#node"><strong>Node.js</strong></a><a
-        href="#python"><strong>Python</strong></a><a href="#databases"><strong>Databases</strong></a><a
-        href="#security"><strong>Security</strong></a><a href="#ai"><strong>Agentic AI</strong></a><a
-        href="#interview"><strong>Interview</strong></a></div>
+
     <section class="topic" id="git">
       <details>
         <summary>Git</summary>
@@ -50,7 +44,7 @@
               <thead>
                 <tr>
                   <th colspan="2">Set up</th>
-             
+
                 </tr>
               </thead>
               <tbody>
@@ -74,14 +68,14 @@
                   <td><code>git config --global user.email "Your Email"</code></td>
                   <td>Set your Git email globally.</td>
                 </tr>
-                </tbody>
-                </table>
+              </tbody>
+            </table>
 
-                <table>
+            <table>
               <thead>
                 <tr>
                   <th colspan="2">Workflow</th>
-             
+
                 </tr>
               </thead>
               <tbody>
@@ -97,11 +91,11 @@
                   <td><code>git commit -m "message"</code></td>
                   <td>Create a commit with a message.</td>
                 </tr>
-                  <tr>
+                <tr>
                   <td><code>git commit -am "message"</code></td>
                   <td>add and commit with a message.</td>
                 </tr>
-                                <tr>
+                <tr>
                   <td><code>git pull</code></td>
                   <td>Fetch and merge remote changes.</td>
                 </tr>
@@ -114,13 +108,13 @@
                   <td>Push a new branch and set upstream tracking.</td>
                 </tr>
               </tbody>
-                </table>
+            </table>
 
-                <table>
+            <table>
               <thead>
                 <tr>
                   <th colspan="2">Branching</th>
-             
+
                 </tr>
               </thead>
               <tbody>
@@ -157,7 +151,7 @@
               <thead>
                 <tr>
                   <th colspan="2">Undo</th>
-             
+
                 </tr>
               </thead>
               <tbody>
@@ -167,12 +161,12 @@
                   <td>Reset to a specific commit.</td>
                 </tr>
                 <tr>
-                  <td><code>git reset --soft HEAD~1</code></td> 
+                  <td><code>git reset --soft HEAD~1</code></td>
                   <td>Reset to the previous commit, keeping changes staged.</td>
                 </tr>
                 <tr>
                   <td><code>git reset --hard HEAD~1</code></td>
-                  <td>Reset to the previous commit, discarding changes.</td>  
+                  <td>Reset to the previous commit, discarding changes.</td>
                 </tr>
                 <tr>
                   <td><code>git revert &lt;commit_hash&gt;</code></td>
@@ -180,14 +174,14 @@
                 </tr>
                 <tr>
                   <td><code>git clean -f</code></td>
-                  <td>Remove untracked files from the working directory.</td>   
+                  <td>Remove untracked files from the working directory.</td>
                 </tr>
                 <tr>
                   <td> <code>git restore &lt;file_path&gt;</code></td>
                   <td>Restore a file to its last committed version.</td>
                 </tr>
                 <tr>
-                  <td><code>git restore --staged &lt;file_path&gt;</code></td>    
+                  <td><code>git restore --staged &lt;file_path&gt;</code></td>
                   <td>Unstage a file.</td>
                 </tr>
                 <tr>
@@ -200,11 +194,11 @@
               <thead>
                 <tr>
                   <th colspan="2">Stash</th>
-             
+
                 </tr>
               </thead>
               <tbody>
-                  <tr>
+                <tr>
                   <td><code>git stash</code></td>
                   <td>Temporarily save uncommitted changes.</td>
                 </tr>
@@ -255,18 +249,21 @@
                   <td><code>git remote -v</code></td>
                   <td>List configured remote repositories.</td>
                 </tr>
-                <tr><td><code>git remote add &lt;remote_name&gt; &lt;url&gt;</code></td>
+                <tr>
+                  <td><code>git remote add &lt;remote_name&gt; &lt;url&gt;</code></td>
                   <td>Add a new remote repository.</td>
                 </tr>
-                <tr><td><code>git remote set-url &lt;remote_name&gt; &lt;url&gt;</code></td>
+                <tr>
+                  <td><code>git remote set-url &lt;remote_name&gt; &lt;url&gt;</code></td>
                   <td>Change the URL of an existing remote.</td>
                 </tr>
                 <tr>
                   <td><code>git fetch</code></td>
                   <td>Download changes from remotes without merging.</td>
                 </tr>
-                <tr><td><code>git pull origin &lt;remote_name&gt;</code></td>
-                  <td>pull from specific remote  branch.</td>
+                <tr>
+                  <td><code>git pull origin &lt;remote_name&gt;</code></td>
+                  <td>pull from specific remote branch.</td>
                 </tr>
                 <tr>
                   <td><code>git push origin --delete &lt;branch_name&gt;</code></td>
@@ -275,7 +272,7 @@
                 </tr>
               </tbody>
             </table>
-<table>
+            <table>
               <thead>
                 <tr>
                   <th colspan="2">other</th>
@@ -291,7 +288,7 @@
                   <td><code>git rebase &lt;your_branch_name&gt;</code></td>
                   <td>Reapply commits on top of another branch.</td>
                 </tr>
-                
+
                 <tr>
                   <td><code>git rm &lt;file&gt;</code></td>
                   <td>Remove a file and stage the deletion.</td>
@@ -351,18 +348,19 @@ then use the remote name when pushing:
             <p>The standard industry practice for Continuous Deployment (GitHub Flow).
               No manual backup branches, no direct pushes to main,
               and all testing happens before production.</p>
-            
 
-                    <h3>unsafe flow ❌</h3>
 
-                    <ol>
-                      <li> on the feature branch let's say 'dev' add your files, commit and push to origin dev</li>
-                      <li> checkout to the back up branch and , pull and merge the main branch into to and push it to
-                        origin backup</li>
-                      <li> on the production branch let's say 'main' pull and merge dev into main, commit and push to
-                        origin main</li>
-                    </ol>
-                    <pre>// check everything is ready to push 
+
+            <div class="card">
+              <h3>Unsafe Flow ❌</h3>
+              <ol>
+                <li> on the feature branch let's say 'dev' add your files, commit and push to origin dev</li>
+                <li> checkout to the back up branch and , pull and merge the main branch into to and push it to
+                  origin backup</li>
+                <li> on the production branch let's say 'main' pull and merge dev into main, commit and push to
+                  origin main</li>
+              </ol>
+              <pre>// check everything is ready to push 
           and push to the remote
 <code>git checkout dev</code>
 <code>git pull</code>
@@ -382,16 +380,20 @@ then use the remote name when pushing:
 <code>git merge dev</code>
 <code>git push origin main</code>
         </pre>
-                  
-<h3>safe flow ✅</h3>
-                    <ol>
-                      <li>Update your local feature branch with the latest production code to catch and fix conflicts
-                        early.</li>
-                      <li>Push your feature branch to the remote repository and open a Pull Request (PR) into main.</li>
-                      <li>Let automated tests (CI) run on the PR, get a review, and click "Merge" on GitHub to
-                        automatically deploy.</li>
-                    </ol>
-                    <pre>// 1. Bring production changes into dev and test locally
+            </div>
+            <div class="card">
+              <h3>Safe Flow ✅</h3>
+
+
+
+              <ol>
+                <li>Update your local feature branch with the latest production code to catch and fix conflicts
+                  early.</li>
+                <li>Push your feature branch to the remote repository and open a Pull Request (PR) into main.</li>
+                <li>Let automated tests (CI) run on the PR, get a review, and click "Merge" on GitHub to
+                  automatically deploy.</li>
+              </ol>
+              <pre>// 1. Bring production changes into dev and test locally
 // be ready to resolve merge issues if someone pushed new changes.
 <code>git checkout dev</code>
 <code>git pull origin main</code>
@@ -410,7 +412,11 @@ then use the remote name when pushing:
 // 4. bug ? use your hosting platform dashboard
 // to roll back to the previous stable build artifact.
         </pre>
-                  
+
+            </div>
+
+
+
             <p>Disclaimer: Use these commands at your own discretion and always check what a command will do before
               running it. I’m not responsible for any loss or damage resulting from their use.</p>
 
@@ -421,22 +427,205 @@ then use the remote name when pushing:
         </div>
       </details>
     </section>
-    <section class="topic" id="Docker">
+<section class="topic" id="claude">
+      <details>
+        <summary>Claude code Cli</summary>
+        <div class="content">
+          <div class="card">
+            <h2>General Commands</h2>
+            <table>
+               <thead>
+              <tr>
+                <th>Command</th>
+                <th>Purpose</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>claude</code></td>
+                <td>starts the claude code cli</td>
+              </tr>
+              <tr>
+                <td><code>claude  --resume</code></td>
+                <td>resume a previous session</td>
+              </tr>
+              <tr>
+                <td><code>claude  --dangerously-skip-permissions</code></td>
+                <td>skips permission checks (use with caution)</td>
+              </tr>
+              <tr>
+                <td><code>/help</code></td>
+                <td>shows available commands and options</td>
+              </tr>
+              <tr>
+                <td><code>/init</code></td>
+                <td>writes CLAUDE.md</td>
+              </tr>
+              <tr>
+                <td><code>/model</code></td>
+                <td>shows the model you are using</td> 
+              </tr>
+              <tr>
+                <td><code>/status</code></td>
+                <td>shows the current usage status</td>
+              </tr>
+              <tr>
+                <td><code>/context</code></td>
+                <td>shows the remaining context details</td>
+              </tr>
+              <tr>  
+                <td><code>/compact</code></td>
+                <td>reduces the context size</td>
+              </tr>
+              <tr>
+                <td><code>/clear</code></td>
+                <td>clears the current context</td>
+              </tr>
+              <tr>
+                <td><code>/stats</code></td>
+                <td>shows the current usage stats</td>
+              </tr>
+
+              <tr>
+                <td><code>/rewind</code></td>
+                <td>rewinds the current checkpoint - lets you pick and restore a previous checkpoint in the conversation with or without the code</td>
+              </tr>
+            
+              </tbody>
+
+            </table>
+<h2>MCPs</h2>
+            <h3>Market Place</h3>
+<ul><li><a href="https://mcp.so/servers">https://mcp.so/servers</a> </li>
+  <li><a href="https://glama.ai/">https://glama.ai/</a></li>
+
+</ul>
+
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp</code></td>
+                  <td>installs the context7 MCP in the current context</td>
+                </tr>
+                <tr>
+                  <td><code>/mcp</code></td>
+                  <td>lists all installed MCPs</td>
+                </tr>
+                <tr>
+                  <td><code>claude mcp remove --scope user context7</code></td>
+                  <td>removes the context7 MCP from the current context</td>
+                </tr>
+
+              </tbody>
+            </table>
+            <h2>Skills</h2>
+            <h3>Market Place</h3>
+            <ul><li><a href="https://www.skills.sh/">https://www.skills.sh/</a>
+            
+            </li>
+              <li> <a href="https://github.com/anthropics/skills/tree/main/skills/">https://github.com/anthropics/skills/tree/main/skills/</a>
+                </li>
+              <li><a href="https://www.skills.sh/skills/agent-browser">https://www.skills.sh/skills/agent-browser</a></li>
+            </ul>
+            <h3>Installing Skills</h3>
+            <ol>
+            <li>To install the agent browser skill you start in you terminal by installing the agent browser. You can do this by running:
+            <code>npm install -g agent-browser</code></p>
+            <li>Then install chromium
+            <code>agent-browser install</code></p>
+            <li>Then you can install the skill:
+            <code>npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser</code></p>
+            <li>ok to proceed? Y</li>
+            <li>When prompted 'Which agents do you want to install to?' select the agent and hit the space bar to proceed. You can install multiple agents by hitting 'Enter' after each selection.</li>
+            <li>Select global or project</li>
+            <li>As method select "copy to all agents" f you run agents inside isolated Docker containers</li>
+            </ol>
+            <p>The skill added to the project can be pushed to github and anybody pulling it can run the skill inside their environments provided they have the necessary dependencies installed.In the case of agent-browser, you need to have agent-browser and chromium installed.</p>
+              
+            <h3>listing skills</h3>
+            <code>/skills</code>
+
+            <h3>Removing skills</h3>
+            <p> delete the Skills folder in the .Claude directory</p>
+
+            <h2>Claude Plugins</h2>
+            <a href="https://github.com/anthropics/claude-plugins-official">https://github.com/anthropics/claude-plugins-official</a>
+            <p>Install Claude Plugins from the Claude Cli interface</p>
+            <code>/plugin</code>
+            <p> select the plugins by hitting the space bar and hit 'i' to install</p>
+            <h2>Claude code cli with Jira mcp</h2>
+            <h3>Installation and authentication and use</h3>
+            <ol>
+              <li>run the following command in your terminal:<code>claude mcp add --transport http atlassian https://mcp.atlassian.com/v1/mcp</code></li>
+              <li>authenticate with the browser flow</li>
+              <li>run a command like 'tell me about the jira issue 123456'</code></li>
+            </ol>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>ralph-loop plugin</th>
+                  <th>feature_dev plugin</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr> 
+                    <td>autonomy - maxes out the freedom of action granted to claude</td>
+                    <td>discipline - controlled and disciplined development process</td>
+                  </tr>
+                </tbody>
+            </table>
+
+            <h2>Claude code cli with github mcp</h2>
+            <h3>Installation and authentication</h3>
+            <ol>
+              <li>create a repo on github</li>
+              <li>create a fine grained personal access token in the profile settings and copy it somewhere safe</li>
+              <li>clone the repo on your local machine using:<code>git clone https://github.com/yourusername/yourrepo.git</code></li>
+              <li>open the project in your code editor</li>
+              <li>run the following command in your editor's terminal to authenticate with github mcp:<code>claude mcp add --transport http github https://api.githubcopilot.com/mcp --header "Authorization: Bearer YOUR_TOKEN_FROM_STEP2"</code></li>
+              <li>run a command like <code>create a github issue that readme is missing</code></li>
+    
+            </ol>
+            <h2>Example for a workflow using atlassian and github mcps with the feature-dev plugin</h2>
+
+            <ol>
+              <li>create a feature task in Jira with a detailed description</li>
+              <li>in the claude code cli session, ask  claude to'carry out the jira issue xxxxx and raise a PR with the changes'</li>
+              <li>in the claude code cli session, ask  claude to move the Jira issue to done</li>
+              <li>in the claude code cli session, ask  claude to merge the PR</code></li>
+          </ol>
+            
+
+          </div><a class="top" href="#home">↑ Back to top</a>
+        </div>
+      </details>
+    </section>
+
+    <section class="topic" id="n8n">
       <details>
         <summary>n8n with self hosted Docker</summary>
         <div class="content">
-<div class="card">
-     <h2>Installation</h2>
-      <ul>
-        <li># Download and install Docker Desktop from the official website.</li>
-        <li># Open Docker Desktop </li>
-        <li># 1 Check that Docker is running and that the Docker daemon is active.</li>
-        <li># docker --version</li>
-         <li># docker ps</li>
-         <li># 2 Create persistent storage</li>
-         <li># docker volume create n8n_data => you should see 'n8n_data'</li>
-         <li># 3 Create and start your n8n container</li>
-         <li><pre><code>// download  create and start 
+          <div class="card">
+            <h2>Installation</h2>
+            <ul>
+              <li># Download and install Docker Desktop from the official website.</li>
+              <li># Open Docker Desktop </li>
+              <li># 1 Check that Docker is running and that the Docker daemon is active.</li>
+              <li># docker --version</li>
+              <li># docker ps</li>
+              <li># 2 Create persistent storage</li>
+              <li># docker volume create n8n_data => you should see 'n8n_data'</li>
+              <li># 3 Create and start your n8n container</li>
+              <li>
+                <pre><code>// download  create and start 
   docker run -d \
   --name n8n \
   --restart unless-stopped \
@@ -446,19 +635,26 @@ then use the remote name when pushing:
   -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
   -e N8N_RUNNERS_ENABLED=true \
   -v n8n_data:/home/node/.n8n \
-  docker.n8n.io/n8nio/n8n</code></pre></li>
-  <li> # 4check the container is running with <pre><code>docker ps</code></pre></li>
-  <li> # 5 Access the web interface with <pre><code>http://localhost:5678</code></pre> in your browser.</li>
-      </ul>
+  docker.n8n.io/n8nio/n8n</code></pre>
+              </li>
+              <li> # 4check the container is running with
+                <pre><code>docker ps</code></pre>
+              </li>
+              <li> # 5 Access the web interface with
+                <pre><code>http://localhost:5678</code></pre> in your browser.
+              </li>
+            </ul>
 
-      <h2>Usage once the first set up is done</h2>
-  <ul>
-    <li># Start Docker Desktop</li> 
+            <h2>Usage once the first set up is done</h2>
+            <ul>
+              <li># Start Docker Desktop</li>
 
-<li>Open <pre><code>http://localhost:5678</code></pre> in your browser.</li>
-  </ul>
+              <li>Open
+                <pre><code>http://localhost:5678</code></pre> in your browser.
+              </li>
+            </ul>
 
-</div>
+          </div>
 
 
 
@@ -497,9 +693,9 @@ then use the remote name when pushing:
 
           </div>
 
-          </div><a class="top" href="#home">↑ Back to top</a>   
-      </div>
-    </details>
+        </div><a class="top" href="#home">↑ Back to top</a>
+        </div>
+      </details>
     </section>
 
 
@@ -1443,9 +1639,9 @@ export class CardComponent { @Input() name = ''; }</code></pre>
       <details>
         <summary>🗄️ Databases</summary>
         <div class="content">
-          <details class="content-section" id="SQL vs MongoDB" open="">
-            <summary></summary>
-            <div class="container">
+    
+         
+      
               <div class="card">
                 <h2>SQL vs MongoDB</h2>
                 <p></p>
@@ -1526,8 +1722,8 @@ export class CardComponent { @Input() name = ''; }</code></pre>
                   </tr>
                 </table>
               </div>
-            </div>
-          </details>
+       
+
         </div>
       </details>
     </section>
